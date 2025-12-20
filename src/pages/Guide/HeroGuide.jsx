@@ -27,7 +27,7 @@ const HeroGuide = () => {
 
         {/* Button Join the waitlist */}
         <div className="w-fit mt-6 relative z-10 ">
-          <JoinWaitlist_Btn />
+          <JoinWaitlist_Btn  />
         </div>
       </div>
 

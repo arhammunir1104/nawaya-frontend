@@ -2,6 +2,11 @@ import React, { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from '../layout/Navbar'
 import Home from '../pages/Home'
+import Exclusive from '../pages/Exclusive'
+import Admin from '../pages/Admin'
+import Footer from '../components/Footer'
+import UserDashboard from '../pages/UserDashboard'
+import Login from '../pages/Login'
 
 const AppRoutes = () => {
   const [role, setRole] = useState('grower')
@@ -11,7 +16,12 @@ const AppRoutes = () => {
         <Navbar role={role} setRole={setRole} />
         <Routes>
             <Route path='/' element={<Home role={role} />} />
+            <Route path='/exclusive/:token' element={<Exclusive role={role} />} />
+            <Route path='/admin' element={<Admin />} />
+            <Route path='/user' element={<UserDashboard />} />
+            <Route path='/login' element={<Login />} />
         </Routes>
+      <Footer />
     </BrowserRouter>
   )
 }

@@ -1,0 +1,75 @@
+import React from 'react';
+import icon1 from "../../assets/Exclusive/icon1.png"
+import icon2 from "../../assets/Exclusive/icon2.png"
+import icon3 from "../../assets/Exclusive/icon3.png"
+import icon4 from "../../assets/Exclusive/icon4.png"
+
+// Card Data for easy maintenance
+const features = [
+  {
+    title: "Exclusive Founder’s Video",
+    description: "Watch immediately after payment.",
+    icon: icon1
+  },
+  {
+    title: "15-minute",
+    description: "15-minute 1:1 Founder Call.",
+    icon: icon2
+  },
+  {
+    title: "Nawaya subscription",
+    description: "30% discount on your first Nawaya subscription year.",
+    icon: icon3
+  },
+  {
+    title: "Member Badge",
+    description: "Early Member Badge inside the future app",
+    icon: icon4
+  }
+];
+
+const Card = () => {
+  return (
+    <section className="w-full py-24 bg-white font-sans">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Centered Heading Section */}
+        <div className="flex flex-col items-center text-center mb-16">
+          <h2 className="text-4xl font-Urbanist md:text-5xl font-bold text-[#1A1A1A] mb-6">
+            What you'll get
+          </h2>
+          {/* Centered Gradient Underline */}
+         
+        </div>
+
+        {/* 4-Card Responsive Grid */}
+        <div className="grid grid-cols-2  lg:grid-cols-4 gap-8">
+          {features.map((item, index) => (
+            <div 
+              key={index}
+              className="group md:p-10 md:py-16 p-8 rounded-[45px] bg-[#F5F6F7] border border-gray-100/50 flex flex-col items-center text-center transition-all duration-300 "
+            //   hover:shadow-2xl hover:-translate-y-2
+            >
+              {/* Centered Icon Container */}
+              <div className="w-20 h-20 rounded-[100%] bg-[#2088371A] shadow-sm flex items-center justify-center text-3xl mb-10  transition-transform duration-300">
+                {/* group-hover:scale-110 */}
+                <img src={item.icon}  alt="" />
+              </div>
+
+              {/* Centered Text Content */}
+              <h3 className="text-md font-bold font-Urbanist text-[#111111] mb-2 leading-tight">
+                {item.title}
+              </h3>
+
+              <p className="text-[#474D55] text-xs md:text-base leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Card;

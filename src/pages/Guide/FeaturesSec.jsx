@@ -53,36 +53,39 @@ const FeaturesSec = () => {
         </p>
 
         {/* 3 feature cards to be added here later */}
-        <div className="grid grid-cols-2 mt-12 gap-6">
-          {/* Feature cards go here */}
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-12 gap-6 xl:gap-10 w-full max-w-[1200px] mx-auto px-4 md:px-0">
+  {GuideFeaturesCards.map((card) => (
+    <div
+      key={card.id}
+      className="bg-btnGray p-6 sm:p-8 lg:p-10 rounded-3xl xl:rounded-[40px] 
+                 overflow-hidden flex flex-col items-start border border-btnGray 
+                 shadow-sm hover:shadow-md transition-shadow duration-300 h-full"
+    >
+      {/* Card Image - Ensures alignment stays consistent */}
+      <div className="mb-6">
+        <img 
+          src={card.image} 
+          alt={card.title} 
+          className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-contain" 
+        />
+      </div>
 
-          {GuideFeaturesCards.map((card) => (
-            <div
-              key={card.id}
-              className="bg-btnGray lg:p-5 xl:p-8 rounded-4xl overflow-hidden flex flex-col items-center-safe border border-btnGray shadow-sm"
-            >
-              {/* Card Image */}
-              <img src={card.image} alt={card.title} className="mr-auto" />
+      <div className="w-full space-y-3">
+        <h1 className="font-Urbanist font-bold text-[#111111]
+                       text-xl sm:text-2xl xl:text-3xl 
+                       leading-tight tracking-tight capitalize text-left">
+          {card.title}
+        </h1>
 
-              <div className="w-full space-y-2 mt-6">
-                <h1 className="font-Urbanist font-semibold lg:text-Heading6 xl:text-Heading5 leading-tight tracking-tight capitalize text-left">
-                  {card.title}
-                </h1>
-
-                <p className="font-Urbanist font-normal lg:text-Paragraph7 xl:text-Paragraph6 leading-relaxed tracking-normal text-textGray text-left">
-                  {card.description}
-                </p>
-              </div>
-
-              {/* card icon */}
-              {/* <div className="absolute w-12 h-12 bg-[#208837]/10 rounded-full top-5 right-5 flex flex-col items-center-safe justify-center-safe">
-                {card.icon}
-              </div> */}
-            </div>
-          ))}
-        </div>
-
-        {/* join waitlist button */}
+        <p className="font-Urbanist font-normal text-textGray
+                      text-sm sm:text-base xl:text-lg 
+                      leading-relaxed tracking-normal text-left">
+          {card.description}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>        {/* join waitlist button */}
         <div className="mt-10">
           <JoinWaitlist_Btn />
         </div>

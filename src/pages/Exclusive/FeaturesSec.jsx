@@ -53,55 +53,32 @@ const FeaturesSec = () => {
       
 
       {/* 3 feature cards to be added here later */}
-      {/* Feature Section Container */}
-<div className="flex justify-center w-full px-4 md:px-0">
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12 gap-6 2xl:gap-10 w-full max-w-[1400px]">
-    
-    {GrowFeaturesCards.map((card) => (
-      <div 
-        key={card.id} 
-        className="bg-btnGray overflow-hidden flex flex-col relative border border-btnGray shadow-sm
-                   transition-all duration-300 hover:shadow-xl hover:-translate-y-1
-                   rounded-2xl sm:rounded-3xl xl:rounded-[40px]
-                   p-6 sm:p-8 lg:p-6 xl:p-10 w-full h-full"
-      >
-        {/* Card Image Wrapper - Ensuring it fits the container */}
-        <div className="w-full mb-6 flex justify-center lg:justify-start">
-          <img 
-            src={card.image} 
-            alt={card.title} 
-            className="w-full h-auto object-cover rounded-xl" 
-          />
-        </div>
+      <div className="grid xs:grid-cols-1 lg:grid-cols-3 mt-12 gap-6 2xl:gap-8 w-[95%]">
+        {/* Feature cards go here */}
 
-        {/* Card Content */}
-        <div className="w-full flex flex-col flex-grow">
-          <h1 className="font-Urbanist font-bold text-[#111111]
-                         text-xl sm:text-2xl lg:text-xl xl:text-3xl
-                         leading-tight tracking-tight capitalize mb-3">
-            {card.title}
-          </h1>
+        {GrowFeaturesCards.map((card) => (
+        <div key={card.id} className="bg-btnGray overflow-hidden flex flex-col items-center-safe relative border border-btnGray shadow-lg
+                              xs:rounded-xl xs:p-3 xs:w-full
+                              sm:w-[400px] sm:p-5
+                              lg:p-5 lg:w-full
+                              xl:p-8 xl:rounded-4xl">
+            {/* Card Image */}
+            <img src={card.image} alt={card.title} className="" />
 
-          <p className="font-Urbanist font-normal text-textGray
-                        text-sm sm:text-base lg:text-sm xl:text-lg
-                        leading-relaxed tracking-normal">
-            {card.description}
-          </p>
-        </div>
+            <div className="w-full space-y-2 mt-2">
+                <h1 className="font-Urbanist font-semibold xs:text-Paragraph4 lg:text-Paragraph2 xl:text-Paragraph1 leading-tight tracking-tight capitalize text-left">{card.title}</h1>
 
-        {/* Floating Icon - Top Right */}
-        <div className="absolute top-4 right-4 sm:top-6 sm:right-6 
-                        w-10 h-10 sm:w-12 sm:h-12 
-                        bg-[#208837]/10 rounded-full 
-                        flex items-center justify-center">
-          <div className="text-[#208837] scale-110 sm:scale-125">
-            {card.icon}
-          </div>
+                <p className="font-Urbanist font-normal xs:text-Paragraph6 md:text-Paragraph5 lg:text-Paragraph5 leading-relaxed tracking-normal text-textGray text-left">{card.description}</p>
+            </div>
+
+            {/* card icon */}
+            <div className="absolute w-12 h-12 bg-[#208837]/10 rounded-full top-5 right-5 flex flex-col items-center-safe justify-center-safe">
+                {card.icon}
+            </div>
         </div>
+        ))}
       </div>
-    ))}
-  </div>
-</div>
+
       {/* join waitlist button */}
         <div className="w-[100%] mt-10">
             <JoinWaitlist_Btn />
