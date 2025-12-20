@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { IoMdArrowBack, IoMdCheckmarkCircle } from "react-icons/io";
 import thankyouIcon from "../assets/ThankYou/icon1.png"
 import PayButton from './PayButton';
@@ -6,17 +6,18 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 import { AppContext } from '../context/AppContext';
 import Cookies from 'universal-cookie';
+import { NavLink } from 'react-router-dom';
 
 
 const SurveyModal = ({ onClose }) => {
   // 1. State for Form Submission
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const { setTempToken } = useContext(AppContext);
+  const { setTempToken,waitListEmail } = useContext(AppContext);
   const cookies = new Cookies();
   // 2. State for Inputs
   const [formData, setFormData] = useState({
     fullName: '',
-    email: '',
+    email: waitListEmail || '',
     seeking: '',
     interests: [],
     country: '',
@@ -24,6 +25,12 @@ const SurveyModal = ({ onClose }) => {
     growth: [],
     consent: false
   });
+
+ useEffect(() => {
+    if (waitListEmail) {
+      setFormData(prev => ({ ...prev, email: waitListEmail }));
+    }
+  }, [waitListEmail]);
 
   // Handle Input Changes
   const handleChange = (e) => {
@@ -117,8 +124,18 @@ Limited to the first 500 members only. Once it’s gone, it’s gone.</p>
            <button onClick={onClose} type="button" className="btn-video cursor-pointer">
             <span className="btn-video__text xs:text-Paragraph6 2xl:text-Paragraph4">Close</span>
             </button>
+
+            <NavLink to={"/exclusive"}>
+             <button 
+              className="px-10 py-3 rounded-full text-white cursor-pointer text-md shadow-xl transition-all hover:scale-105 active:scale-95"
+              style={{
+                background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)'
+              }}
+            >
+              Pay $19.99 – Unlock My Access
+            </button>
+            </NavLink>
             
-                <PayButton />
             </div>
         </div>
       </div>
@@ -165,6 +182,7 @@ Limited to the first 500 members only. Once it’s gone, it’s gone.</p>
               className="w-full px-6 font-Urbanist py-4 rounded-2xl bg-[#F4F6F2] border-none outline-none focus:ring-2 focus:ring-[#94BD1C]" 
               required 
               onChange={handleChange}
+              value={formData.email}
             />
             
             <select 

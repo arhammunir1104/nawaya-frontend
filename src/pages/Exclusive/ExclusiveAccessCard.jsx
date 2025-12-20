@@ -1,5 +1,6 @@
 import React from 'react';
 import frame1 from "../../assets/Exclusive/fram1.png"
+import PayButton from '../../components/PayButton';
 
 const ExclusiveAccessCard = () => {
   return (
@@ -27,12 +28,14 @@ const ExclusiveAccessCard = () => {
             and join the circle of Nawaya's first 500 early supporters.
           </p>
 
-          <button className="mt-4 px-8 py-4 rounded-full text-white font-medium transition-transform hover:scale-105 active:scale-95 shadow-lg"
+          {/* <button className="mt-4 px-8 py-4 rounded-full text-white font-medium transition-transform hover:scale-105 active:scale-95 shadow-lg"
             style={{
               background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)'
             }}>
             Unlock Access for $19.99 (save $30)
-          </button>
+          </button> */}
+
+          <PayButton text={"Unlock Access for $19.99 (save $30)"} />
         </div>
 
         {/* Image Section */}
@@ -48,4 +51,4 @@ const ExclusiveAccessCard = () => {
   );
 };
 
-export default ExclusiveAccessCard;
+export default ExclusiveAccessCard; 

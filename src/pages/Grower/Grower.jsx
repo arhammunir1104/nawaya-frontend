@@ -4,6 +4,7 @@ import FeaturesSec from './FeaturesSec'
 import JourneySec from './JourneySec'
 import FaqSec from './FaqSec'
 import Footer from '../../components/Footer'
+import ExclusiveAccessCard from './ExclusiveAccessCard'
 
 const Grower = () => {
   return (
@@ -11,6 +12,7 @@ const Grower = () => {
       <HeroGrower/>
       <FeaturesSec/>
       <JourneySec />
+      <ExclusiveAccessCard />
       <FaqSec />
     </section>
   )

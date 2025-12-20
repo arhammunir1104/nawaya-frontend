@@ -10,6 +10,7 @@ import Login from '../pages/Login'
 
 import { ToastContainer } from 'react-toastify';
 import AdminLogin from '../pages/AdminLogin'
+import Guide from '../pages/Guide/Guide'
 
 const AppRoutes = () => {
   const [role, setRole] = useState('grower')
@@ -20,7 +21,8 @@ const AppRoutes = () => {
         <ToastContainer />
         <Routes>
             <Route path='/' element={<Home role={role} />} />
-            <Route path='/exclusive/:token' element={<Exclusive role={role} />} />
+            <Route path='/guide' element={<Guide role={role} />} />
+            <Route path='/exclusive' element={<Exclusive role={role} />} />
             <Route path='/admin/dashboard' element={<Admin />} />
             <Route path='/admin' element={<AdminLogin />} />
             <Route path='/user' element={<UserDashboard />} />

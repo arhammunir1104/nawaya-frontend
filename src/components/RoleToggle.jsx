@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react'
 import { LuGraduationCap } from "react-icons/lu"
 import { FaRegCompass } from "react-icons/fa"
+import { NavLink } from 'react-router-dom'
 
 const RoleToggle = ({ role, setRole, onClose }) => {
 
@@ -18,7 +19,7 @@ const RoleToggle = ({ role, setRole, onClose }) => {
       }
     },
     [role]
-  )
+  ) 
 
   return (
     <div
@@ -37,7 +38,7 @@ const RoleToggle = ({ role, setRole, onClose }) => {
         pointer-events-none`}
         style={{ width: 'calc(50% - 4px)' }}
       />
-
+      <NavLink to={"/"}>
       <button
         type="button"
         onClick={() => handleSelect('grower')}
@@ -47,7 +48,9 @@ const RoleToggle = ({ role, setRole, onClose }) => {
         <LuGraduationCap size={18} />
         Grower
       </button>
+      </NavLink>
 
+      <NavLink to={"/guide"}>
       <button
         type="button"
         onClick={() => handleSelect('guide')}
@@ -57,6 +60,7 @@ const RoleToggle = ({ role, setRole, onClose }) => {
         <FaRegCompass size={18} />
         Guide
       </button>
+      </NavLink>
     </div>
   )
 }

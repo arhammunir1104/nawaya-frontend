@@ -3,7 +3,7 @@ import { AppContext } from '../context/AppContext';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
-function PayButton() {
+function PayButton({text}) {
   const { tempToken } = useContext(AppContext);
 
   const generateStripePay = async (e) =>{
@@ -42,7 +42,7 @@ function PayButton() {
             }}
             onClick={generateStripePay}
           >
-            Pay $19.99 – Unlock My Access
+            {text}
           </button>
     </>
   ) 

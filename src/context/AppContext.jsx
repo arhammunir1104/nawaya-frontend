@@ -14,7 +14,7 @@ const AppContextProvider = (props) =>{
     const [token, setToken ] = useState(cookies.get('user_token') ? cookies.get('user_token') : false);
     const [tempToken, setTempToken ] = useState(cookies.get('tempToken') ? cookies.get('tempToken') : false);
     const [adminToken, setAdminToken ] = useState(cookies.get('admin_token') ? cookies.get('admin_token') : false);
-
+     const [waitListEmail, setWaitListEmail ] = useState("");
 
 
     const value = {
@@ -23,7 +23,9 @@ const AppContextProvider = (props) =>{
         tempToken, 
         setTempToken ,
         adminToken, 
-        setAdminToken 
+        setAdminToken,
+        waitListEmail, 
+        setWaitListEmail 
     };
 
     return(

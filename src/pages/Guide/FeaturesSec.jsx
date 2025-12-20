@@ -38,7 +38,7 @@ const FeaturesSec = () => {
   ];
 
   return (
-    <section className="bg-Primarybg py-20">
+    <section id="features" className="bg-Primarybg py-20">
       <div className="xs:w-[95vw] xl:w-[950px] mx-auto px-6 text-center flex flex-col items-center-safe">
         <h3 className="font-Buenard font-bold text-Paragraph2 text-textGreen">
           Features

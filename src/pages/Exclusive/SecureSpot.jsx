@@ -35,7 +35,7 @@ const SecureSpot = () => {
           
           */}
 
-          <PayButton />
+          <PayButton text={"Pay $19.99 – Unlock My Access"} />
         </div>
       </section>
 

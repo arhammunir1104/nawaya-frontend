@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { IoMdMail } from "react-icons/io";
 import peopleImage from "../../assets/Guide/people.png"
 import JoinWaitlist_Btn from '../../components/JoinWaitlist_Btn';
+import { AppContext } from '../../context/AppContext';
 
 // Replace these with your actual image paths
 const guides = [
@@ -14,6 +15,7 @@ const guides = [
 ];
 
 const Join = () => {
+  const {waitListEmail, setWaitListEmail} = useContext(AppContext);
   return (
     <section className="w-full py-16 px-4 md:px-10 bg-[#F2F2F2]">
       <div className="max-w-6xl mx-auto bg-white rounded-[40px] md:rounded-[60px] pt-16 md:pt-24 overflow-hidden shadow-sm border border-white relative">
@@ -37,17 +39,15 @@ const Join = () => {
                 type="email" 
                 placeholder="Enter your email" 
                 className="w-full pl-12 pr-6 py-4 bg-[#F4F6F2] border-2 border-transparent rounded-full outline-none focus:border-[#94BD1C]/20 focus:bg-white transition-all font-medium"
+                value={waitListEmail}
+                  onChange={(e)=>{
+                    setWaitListEmail(e.target.value)
+                }}
               />
             </div>
             <div>
                 <JoinWaitlist_Btn /> 
             </div>
-            {/* <button 
-              className="w-full sm:w-auto px-10 py-4 rounded-full text-white font-bold shadow-lg transition-transform active:scale-95 whitespace-nowrap"
-              style={{ background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)' }}
-            >
-              Join the waitlist
-            </button> */}
           </div>
         </div>
 
