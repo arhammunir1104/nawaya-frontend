@@ -29,9 +29,7 @@ const HeroGrower = () => {
 
         {/* Button Join the waitlist */}
         <div className="flex flex-row gap-4">
-        <div className="w-fit mt-6 relative z-5">
-          <JoinWaitlist_Btn />
-        </div>
+        
         <div className="w-fit mt-6 relative z-2">
           <WatchAVideo />
         </div>

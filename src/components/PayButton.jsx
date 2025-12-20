@@ -10,7 +10,6 @@ function PayButton({text}) {
     try{
       e.preventDefault();
 
-      
       const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/user/enableMembership`,
        { headers : {
         'Authorization': `Bearer ${tempToken}`,

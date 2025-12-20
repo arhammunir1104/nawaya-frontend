@@ -1,32 +1,31 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { LuGraduationCap } from "react-icons/lu"
 import { FaRegCompass } from "react-icons/fa"
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
-const RoleToggle = ({ role, setRole, onClose }) => {
+const RoleToggle = ({ onClose }) => {
+  const location = useLocation();
+  const [role, setRole] = useState("grower");
+
+  // Sync the role state with the actual URL path
+  useEffect(() => {
+    if (location.pathname === "/guide") {
+      setRole('guide');
+    } else if (location.pathname === "/") {
+      setRole('grower');
+    }
+  }, [location.pathname, setRole]);
 
   const handleSelect = (value) => {
     setRole(value)
-    if (onClose) onClose() // ✅ sidebar close
+    if (onClose) onClose() // Close sidebar if open
   }
-
-  const onKey = useCallback(
-    (e) => {
-      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') handleSelect('grower')
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') handleSelect('guide')
-      if (e.key === 'Enter' || e.key === ' ') {
-        handleSelect(role === 'grower' ? 'guide' : 'grower')
-      }
-    },
-    [role]
-  ) 
 
   return (
     <div
       className="relative inline-flex items-center rounded-full p-1 bg-white border-4 border-white gap-4"
       role="tablist"
       tabIndex={0}
-      onKeyDown={onKey}
     >
       {/* sliding pill */}
       <div
@@ -38,28 +37,27 @@ const RoleToggle = ({ role, setRole, onClose }) => {
         pointer-events-none`}
         style={{ width: 'calc(50% - 4px)' }}
       />
-      <NavLink to={"/"}>
-      <button
-        type="button"
-        onClick={() => handleSelect('grower')}
-        className={`relative z-10 flex items-center gap-2 px-5 py-1.5 rounded-full xs:text-Paragraph6 2xl:text-Paragraph4 cursor-pointer
-        ${role === 'grower' ? 'text-lime-700' : 'text-gray-400'}`}
-      >
-        <LuGraduationCap size={18} />
-        Grower
-      </button>
+      
+      <NavLink to={"/"} onClick={() => handleSelect('grower')}>
+        <button
+          type="button"
+          className={`relative z-10 flex items-center gap-2 px-5 py-1.5 rounded-full xs:text-Paragraph6 2xl:text-Paragraph4 cursor-pointer transition-colors
+          ${role === 'grower' ? 'text-lime-700 font-bold' : 'text-gray-400'}`}
+        >
+          <LuGraduationCap size={18} />
+          Grower
+        </button>
       </NavLink>
 
-      <NavLink to={"/guide"}>
-      <button
-        type="button"
-        onClick={() => handleSelect('guide')}
-        className={`relative z-10 flex items-center gap-2 px-5 py-1.5 rounded-full xs:text-Paragraph6 2xl:text-Paragraph4 cursor-pointer
-        ${role === 'guide' ? 'text-lime-700' : 'text-gray-400'}`}
-      >
-        <FaRegCompass size={18} />
-        Guide
-      </button>
+      <NavLink to={"/guide"} onClick={() => handleSelect('guide')}>
+        <button
+          type="button"
+          className={`relative z-10 flex items-center gap-2 px-5 py-1.5 rounded-full xs:text-Paragraph6 2xl:text-Paragraph4 cursor-pointer transition-colors
+          ${role === 'guide' ? 'text-lime-700 font-bold' : 'text-gray-400'}`}
+        >
+          <FaRegCompass size={18} />
+          Guide
+        </button>
       </NavLink>
     </div>
   )

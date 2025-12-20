@@ -75,7 +75,13 @@ export default function SideBar({ onClose, visible, menus, role, setRole }) {
         </div>
 
         {/* JoinWaitlist_Btn */}
-        <JoinWaitlist_Btn />
+        {/* <div onClick={()=>{
+          console.log("HI")
+          onClose()
+          }}> */}
+
+        {/* <JoinWaitlist_Btn /> */}
+        {/* </div> */}
       </div>
 
       {/* Menu */}

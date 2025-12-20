@@ -79,6 +79,7 @@ const Footer = () => {
                 Start Free Trial
             </button> */}
              <div className="w-fit mt-6 relative z-10 ">
+              
               <JoinWaitlist_Btn />
             </div>
           </div>
