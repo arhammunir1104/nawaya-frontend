@@ -210,7 +210,7 @@ const Admin = () => {
                       )) || "None"}
                     </div>
                   </div>
-                </div>
+                </div>  
                 <div className="space-y-8">
                   <div>
                     <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-3">Languages</h4>
