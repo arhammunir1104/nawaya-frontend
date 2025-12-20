@@ -223,7 +223,7 @@ const Admin = () => {
                     )) || "No vision entries found."}
                   </div>
                 </div>
-              </div>
+              </div>  
             </div>
           </div>
         </div>
