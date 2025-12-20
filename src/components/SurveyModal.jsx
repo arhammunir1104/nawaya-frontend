@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { IoMdArrowBack, IoMdCheckmarkCircle } from "react-icons/io";
 import thankyouIcon from "../assets/ThankYou/icon1.png"
 import PayButton from './PayButton';
+import { toast } from 'react-toastify';
+import axios from 'axios';
+import { AppContext } from '../context/AppContext';
+import Cookies from 'universal-cookie';
+
 
 const SurveyModal = ({ onClose }) => {
   // 1. State for Form Submission
   const [isSubmitted, setIsSubmitted] = useState(false);
-  
+  const { setTempToken } = useContext(AppContext);
+  const cookies = new Cookies();
   // 2. State for Inputs
   const [formData, setFormData] = useState({
     fullName: '',
@@ -34,10 +40,53 @@ const SurveyModal = ({ onClose }) => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Logic for validation or API call goes here
-    setIsSubmitted(true);
+  const handleSubmit = async (e) => {
+    try{
+      e.preventDefault();
+
+      const finalData = {
+        name : formData.fullName,
+        email : formData.email,
+        seeking : formData.seeking,
+        areaOfInterest : formData.interests,
+        languagePreferance : formData.languages,
+        grow : formData.growth,
+        country : formData.country
+      }
+
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/user/addSurveyData`,
+        finalData,
+       { headers : {
+          'Content-Type': 'application/json'
+        }}
+      );
+
+      if(response?.data?.status == "success"){
+        toast.success(response?.data?.message);
+        setTempToken(response?.data?.data?.token);
+        cookies.set('temp_token', response?.data?.data?.token, { 
+          path: '/', 
+          maxAge: 604800, // 7 days in seconds
+          secure: true,   // Only send over HTTPS
+          sameSite: 'lax' 
+        });
+
+        setTimeout(()=>{
+        setIsSubmitted(true);
+        }, 1500)
+      }
+      else{
+        toast.error(response?.response?.data?.message)
+      }
+
+
+    }
+    catch(e){
+      // toast.error("Form Submission error.");
+        toast.error(e?.response?.data?.message || "Something Went Wrong, Please Try Again Later");
+      // console.log(e)
+    };
+
   };
 
   // --- VIEW: THANK YOU MODAL ---

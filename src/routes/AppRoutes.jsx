@@ -8,16 +8,21 @@ import Footer from '../components/Footer'
 import UserDashboard from '../pages/UserDashboard'
 import Login from '../pages/Login'
 
+import { ToastContainer } from 'react-toastify';
+import AdminLogin from '../pages/AdminLogin'
+
 const AppRoutes = () => {
   const [role, setRole] = useState('grower')
 
   return (
     <BrowserRouter>
         <Navbar role={role} setRole={setRole} />
+        <ToastContainer />
         <Routes>
             <Route path='/' element={<Home role={role} />} />
             <Route path='/exclusive/:token' element={<Exclusive role={role} />} />
-            <Route path='/admin' element={<Admin />} />
+            <Route path='/admin/dashboard' element={<Admin />} />
+            <Route path='/admin' element={<AdminLogin />} />
             <Route path='/user' element={<UserDashboard />} />
             <Route path='/login' element={<Login />} />
         </Routes>
