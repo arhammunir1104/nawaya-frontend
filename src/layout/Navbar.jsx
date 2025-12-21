@@ -206,8 +206,17 @@ const Navbar = ({ role, setRole }) => {
                 </div>
               ) : (
                 <div className="flex items-center gap-3">
-                  <NavLink to="/login" className="font-Urbanist text-textPrimary hover:text-[#94BD1C] font-bold text-[10px] uppercase tracking-wider">Login</NavLink>
-                  {/* {location.pathname !== "/login" || token || tempToken || adminToken  && <JoinWaitlist_Btn />} */}
+                  <NavLink to="/login" className="font-Urbanist text-textPrimary hover:text-[#94BD1C] font-bold transition-all text-sm uppercase tracking-wider">
+                   <button 
+                      type="button" 
+                      className="btn-join flex z-9 cursor-pointer"
+                    >
+                      <span className="btn-join__text xs:text-Paragraph6 2xl:text-Paragraph4">
+                        LOGIN
+                      </span>
+                    </button>
+                </NavLink>
+                  {/* {location.pathname !== "/login" || token || tempToken || adminToken  && <JoinWaitlist_Btn />}
                   {
                   (location.pathname == "/login" || token || tempToken || adminToken)
                   ?
@@ -216,7 +225,7 @@ const Navbar = ({ role, setRole }) => {
                   <div className="flex z-20">
                    <JoinWaitlist_Btn />
                    </div>
-                }
+                } */}
                 </div>
               )}
             </div>

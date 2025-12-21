@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Cookies from 'universal-cookie';
 
 const Admin = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -13,8 +14,9 @@ const Admin = () => {
   
   const [userData, setUserData] = useState([]); 
   
-  const { adminToken } = useContext(AppContext);
+  const { adminToken, setAdminToken } = useContext(AppContext);
   const navigate = useNavigate();
+    const cookies = new Cookies();
 
   
   const totalUsers = userData.length;
@@ -30,6 +32,7 @@ const Admin = () => {
           'Content-Type': 'application/json'
         }
       });
+
       
       if (response.data.status === "success") {
         setIsAuthorized(true);
@@ -40,6 +43,10 @@ const Admin = () => {
     } catch (e) {
       // console.log("Auth Error:", e);
       setIsAuthorized(false);
+      setAdminToken("");
+      cookies.remove('admin_token', { path: '/' });
+      navigate("/admin");
+
     } finally {
       setLoading(false);
     }
