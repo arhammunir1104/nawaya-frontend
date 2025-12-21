@@ -151,7 +151,7 @@ const SurveyModal = ({ onClose }) => {
       <div className="relative w-full max-w-2xl bg-white rounded-[30px] md:rounded-[40px] shadow-2xl overflow-hidden flex flex-col max-h-[92vh] animate-in zoom-in-95 duration-300">
 
         {/* Header - Fixed */}
-        <div className="w-full py- md:py-6 text-center shrink-0 relative" style={{ background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)' }}>
+        <div className="w-full py-4 md:py-6 text-center shrink-0 relative" style={{ background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)' }}>
           <div className='flex items-center justify-start px-5 absolute top-0 left-0 h-full z-10'>
             <button onClick={onClose} type="button">
               <IoMdArrowBack className="text-2xl md:text-3xl text-white hover:text-red-500 transition-all cursor-pointer" />
@@ -271,13 +271,13 @@ const SurveyModal = ({ onClose }) => {
 
         {/* Footer - Fixed/Sticky at Bottom */}
         <div className="shrink-0 p-5 md:p-8 bg-white border-t border-gray-100 flex flex-col sm:flex-row gap-4">
-          <button
+          {/* <button
             type="button"
             onClick={onClose}
             className="flex-1 py-3 md:py-4 rounded-full border-2 border-[#94BD1C] text-[#94BD1C] font-bold hover:bg-[#F9FBF7] transition-all text-sm md:text-base"
           >
             Go Back
-          </button>
+          </button> */}
           <button
             type="submit"
             form="survey-form"
