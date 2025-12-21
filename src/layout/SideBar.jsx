@@ -1,19 +1,20 @@
 import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import gsap from "gsap";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { GrMenu } from "react-icons/gr";
-import JoinWaitlist_Btn from "../components/JoinWaitlist_Btn";
 import RoleToggle from "../components/RoleToggle";
 
 export default function SideBar({ onClose, visible, menus, role, setRole }) {
   const navRef = useRef(null);
   const ulRef = useRef(null);
 
-  const closeSidebar = () => {
+  // Function to handle the "Close" button specifically (with animation)
+  const handleManualClose = () => {
     gsap.to(navRef.current, {
       y: "100%",
       opacity: 0,
-      duration: 0.45,
+      duration: 0.4,
       ease: "power3.inOut",
       onComplete: () => onClose(),
     });
@@ -25,23 +26,22 @@ export default function SideBar({ onClose, visible, menus, role, setRole }) {
 
       const tl = gsap.timeline();
 
-      // Sidebar open animation
+      // Opening Animation
       tl.fromTo(
         navRef.current,
         { y: "100%", opacity: 0 },
         { y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }
       );
 
-      // Nav items animation
       if (ulRef.current) {
         tl.fromTo(
           ulRef.current.children,
-          { opacity: 0, y: 10 },
+          { opacity: 0, y: 15 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.4,
-            stagger: 0.08,
+            duration: 0.3,
+            stagger: 0.05,
             ease: "power3.out",
           },
           "-=0.2"
@@ -52,56 +52,57 @@ export default function SideBar({ onClose, visible, menus, role, setRole }) {
         document.body.style.overflow = "auto";
         tl.kill();
       };
-    } else {
-      document.body.style.overflow = "auto";
     }
   }, [visible]);
 
   if (!visible) return null;
 
-  return (
-    <nav
-      ref={navRef}
-      className="absolute inset-0 ml-auto py-6 px-5 h-screen z-50 flex flex-col items-center-safe
-      lg:hidden text-black bg-GrayBg overflow-hidden"
-    >
-      {/* Header */}
-      <div className="w-[90vw] mt-2 relative flex justify-between items-center">
-        <div
-          onClick={closeSidebar}
-          className="bg-Primarybg w-12 h-12 rounded-full flex justify-center items-center"
-        >
-          <GrMenu className="text-Heading8 rotate-90" />
+  return createPortal(
+    <div className="fixed inset-0 z-[10000] flex flex-col pointer-events-none">
+      {/* Clicking the overlay closes the menu */}
+      <div 
+        className="absolute inset-0 bg-black/20 backdrop-blur-[1px] pointer-events-auto" 
+        onClick={handleManualClose} 
+      />
+
+      <nav
+        ref={navRef}
+        className="relative w-full h-full bg-GrayBg text-black flex flex-col overflow-hidden pointer-events-auto"
+      >
+        {/* Header */}
+        <div className="w-full pt-10 pb-6 px-6 flex justify-between items-center shrink-0">
+          <div
+            onClick={handleManualClose}
+            className="bg-Primarybg w-12 h-12 rounded-full flex justify-center items-center cursor-pointer shadow-md"
+          >
+            <GrMenu className="text-Heading8 rotate-90" />
+          </div>
         </div>
 
-        {/* JoinWaitlist_Btn */}
-        {/* <div onClick={()=>{
-          console.log("HI")
-          onClose()
-          }}> */}
+        {/* Menu Area */}
+        <div className="flex-1 overflow-y-auto flex flex-col items-center justify-center px-6">
+          <ul ref={ulRef} className="w-full flex flex-col items-center">
+            {menus.map((navMenu) => (
+              <li key={navMenu.id} className="my-5">
+                <a
+                  href={navMenu.url}
+                  // IMPORTANT: onClose() here happens instantly so the route change works
+                  onClick={() => onClose()} 
+                  className="font-Urbanist text-2xl font-semibold text-center block"
+                >
+                  {navMenu.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-        {/* <JoinWaitlist_Btn /> */}
-        {/* </div> */}
-      </div>
-
-      {/* Menu */}
-      <ul ref={ulRef} className=" my-2 h-[80vh] flex flex-col items-center-safe justify-center-safe">
-        {menus.map((navMenu) => (
-          <li key={navMenu.id} className="my-6">
-            <NavLink
-              to={navMenu.url}
-              onClick={closeSidebar}
-              className="font-Urbanist text-Paragraph5 font-medium text-center"
-            >
-              {navMenu.name}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-
-      <section className="flex flex-col items-center-safe justify-center-safe fixed bottom-5">
-        <RoleToggle role={role} setRole={setRole} onClose={closeSidebar} />
-      </section>
-    </nav>
+        {/* Role Toggle Area */}
+        <section className="shrink-0 w-full flex flex-col items-center justify-center pb-12 pt-6 bg-GrayBg border-t border-gray-100/50">
+          <RoleToggle role={role} setRole={setRole} onClose={() => onClose()} />
+        </section>
+      </nav>
+    </div>,
+    document.body
   );
 }

@@ -62,7 +62,7 @@ const Navbar = ({ role, setRole }) => {
   ];
 
   return (
-    <nav className="bg-GrayBg w-full sticky top-0 z-[50] flex justify-center border-b border-gray-100/80 backdrop-blur-md">
+    <nav className="bg-GrayBg w-full  top-0 z-5 flex justify-center border-b border-gray-100/80 backdrop-blur-md">
       <section className="w-[90vw] 2xl:w-[1400px] flex items-center justify-between py-4">
         
         <div className="flex items-center gap-8 xl:gap-12">
@@ -126,21 +126,30 @@ const Navbar = ({ role, setRole }) => {
                       <FaSignOutAlt className="text-xs" /> Logout
                     </button>
                   </div>
-                )}
+                )} 
               </div>
             ) : (
               <>
-                <NavLink to="/login" className="font-Urbanist text-textPrimary hover:text-[#94BD1C] font-bold transition-all text-sm uppercase tracking-wider">Login</NavLink>
+                <NavLink to="/login" className="font-Urbanist text-textPrimary hover:text-[#94BD1C] font-bold transition-all text-sm uppercase tracking-wider">
+                   <button 
+                      type="button" 
+                      className="btn-join flex z-9 cursor-pointer"
+                    >
+                      <span className="btn-join__text xs:text-Paragraph6 2xl:text-Paragraph4">
+                        LOGIN
+                      </span>
+                    </button>
+                </NavLink>
                 {/* {location.pathname !== "/login" || token || tempToken || adminToken && <JoinWaitlist_Btn />} */}
-                {
+                {/* {
                   (location.pathname == "/login" || token || tempToken || adminToken)
                   ?
                   <></>
                   :
-                  <div className="flex">
+                  <div className="flex z-[9999]">
                    <JoinWaitlist_Btn />
                    </div>
-                }
+                } */}
               </>
             )}
           </div>
@@ -204,8 +213,9 @@ const Navbar = ({ role, setRole }) => {
                   ?
                   <></>
                   :
-                  
+                  <div className="flex z-20">
                    <JoinWaitlist_Btn />
+                   </div>
                 }
                 </div>
               )}
@@ -214,6 +224,7 @@ const Navbar = ({ role, setRole }) => {
         </div>
       </section>
 
+      <div className="z-50">
       <SideBar 
         menus={menu} 
         visible={sidebarOpen} 
@@ -221,6 +232,7 @@ const Navbar = ({ role, setRole }) => {
         isLoggedIn={!!token}
         onLogout={handleLogout}
       />
+      </div>
     </nav>
   );
 };

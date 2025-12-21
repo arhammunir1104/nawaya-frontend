@@ -19,7 +19,7 @@ const JoinWaitlist_Btn = () => {
     <>
       <button 
         type="button" 
-        className="btn-join  cursor-pointer"
+        className="btn-join flex z-9 cursor-pointer"
         onClick={() => setIsModalOpen(true)}
       >
         <span className="btn-join__text xs:text-Paragraph6 2xl:text-Paragraph4">

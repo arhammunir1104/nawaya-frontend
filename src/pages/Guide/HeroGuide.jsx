@@ -33,7 +33,7 @@ const HeroGuide = () => {
 
       {/* Image Section */}
       <div className="xs:mt-10 lg:mt-16 mx-auto xs:w-[95vw] xl:w-[1050px] relative">
-        <img src={Banner} className="z-8 relative xs:hidden lg:inline lg:relative lg:w-full lg:h-auto " />
+        <img src={Banner} className="z-3 relative xs:hidden lg:inline lg:relative lg:w-full lg:h-auto " />
                 <img src={Banner1} className="z-8 relative xs:inline xs:w-full xs:h-full lg:hidden" />
 
 
