@@ -23,10 +23,10 @@ const Join = () => {
         {/* Content Section */}
         <div className="text-center px-6 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold text-[#111111] mb-6 leading-tight">
-            Are You Ready To Start Guiding?
+           Ready to Start Guiding?
           </h2>
           <p className="text-[#666666] text-sm md:text-lg mb-10 leading-relaxed font-medium">
-            Create your profile, share your expertise, and connect with learners who are ready to grow — Nawaya makes it simple to begin.
+            Create your profile, share your expertise, and connect with learners who are ready to grow. Nawaya makes it simple to begin and meaningful to continue.
           </p>
 
           {/* Subscription / Join Form */}

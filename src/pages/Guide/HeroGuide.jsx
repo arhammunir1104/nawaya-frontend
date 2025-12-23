@@ -16,13 +16,13 @@ const HeroGuide = () => {
                 xs:text-Heading8 sm:text-Heading7 md:text-Heading5 lg:text-Heading4 xl:text-Heading3 2xl:text-Heading1  ">
           Share what you know. 
           <br className='' />
-          Inspire who you can.
+         Guide With Purpose.
         </h1>
         <p className="font-Urbanist font-normal leading-relaxed tracking-normal text-textGray mt-6 
                 xs:text-Paragraph6 md:text-Paragraph5 lg:text-Paragraph4">
-          You don’t need a big following to make an impact. Nawaya makes it easy 
+         You don’t need a massive following to make an impact. Nawaya helps you reach the right people,
           <br />
-          to guide others, grow your reputation, and earn from your expertise.
+           create meaningful sessions, and earn from your expertise - without noise or complexity.
         </p>
 
         {/* Button Join the waitlist */}

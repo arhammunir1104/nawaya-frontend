@@ -14,16 +14,15 @@ const HeroGrower = () => {
                   xl:w-[90vw] 2xl:w-[1400px]">
         <h1 className="font-Urbanist font-semibold leading-tight tracking-tight capitalize text-textPrimary
                 xs:text-Heading8 sm:text-Heading6 md:text-Heading5 lg:text-Heading4 xl:text-Heading3 2xl:text-Heading1">
-          Grow with guidance,
+         Grow With Real Guidance
           <br />
-          not guesswork
+          Not Guesswork
         </h1>
         <p className="font-Urbanist font-normal leading-relaxed tracking-normal text-textGray mt-6 
                 xs:text-Paragraph6 md:text-Paragraph5 lg:text-Paragraph4">
-          Connect with trusted coaches, join growth communities, and learn
-          through 
+          Connect with experienced Guides, join live growth circles, and follow structured paths
           <br className="xs:hidden lg:inline" />
-          personalized programs that move you closer to your goals.
+          designed around your goals with real people, real feedback, and real progress.
         </p>
 
         {/* Button Join the waitlist */}

@@ -13,7 +13,7 @@ const Guide = () => {
       <JourneySec />
       <Join />
       <FaqSec />
-     </section> 
+     </section>  
   )
 }
 

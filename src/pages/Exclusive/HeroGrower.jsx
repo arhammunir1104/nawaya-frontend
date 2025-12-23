@@ -6,6 +6,7 @@ import LeftShade from "../../assets/Grower/LeftShade.png"
 import RightShade from "../../assets/Grower/RightShade.png"
 import WatchAVideo from "../../components/WatchAVideo";
 import ExclusiveAccessCard from "./ExclusiveAccessCard";
+import PayButton from "../../components/PayButton";
 
 const HeroGrower = () => {
   return (
@@ -22,15 +23,20 @@ const HeroGrower = () => {
         </h1>
         <p className="font-Urbanist font-normal leading-relaxed tracking-normal text-textGray mt-6 
                 xs:text-Paragraph6 md:text-Paragraph5 lg:text-Paragraph4">
-         Gain exclusive early access to the founder’s vision, a personal message about the
-          <br className="xs:hidden lg:inline" />
-           movement we’re building, plus a 30% discount for your first subscription year.
+        Get early access to the vision behind Nawaya, connect directly with the founder,
+            <br className="xs:hidden lg:inline" />
+            and secure exclusive benefits reserved for our first supporters.
+         
         </p>
 
         {/* Button Join the waitlist */}
-        <div className="flex flex-row gap-4">
+        <div className="flex mt-2 flex-row gap-4 items-center justify-center">
+
+          <div className="z-2">
+            <PayButton text={"Unlock Access for $19.99"} />
+          </div>
         
-        <div className="w-fit mt-6 relative z-2">
+        <div className="w-fit relative z-2">
           <WatchAVideo />
         </div>
         </div>

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { IoMdArrowBack, IoMdCheckmarkCircle } from "react-icons/io";
 import thankyouIcon from "../assets/ThankYou/icon1.png"
+import thankyouIconCircle from "../assets/ThankYou/icon2.png"
 import PayButton from './PayButton';
 import { toast } from 'react-toastify';
 import axios from 'axios';
@@ -101,29 +102,72 @@ const SurveyModal = ({ onClose }) => {
 
   // --- VIEW: THANK YOU MODAL ---
   if (isSubmitted) {
+    
     return (
-      <div className="fixed z-[9999] inset-0 h-screen w-screen flex items-center justify-center p-2">
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" onClick={onClose}></div>
-        <div className="relative  w-[95%] md:w-[60%] max-h-[90vh] overflow-y-auto bg-white rounded-[40px] shadow-2xl p-6 md:p-10 text-center animate-in zoom-in-95 duration-300">
+      <div className="fixed z-[9999] overflow-y-hidden inset-0 h-screen w-screen flex items-center justify-center p-2">
+        <div className="absolute inset-0 overflow-y-hidden bg-black/40 backdrop-blur-[2px]" onClick={onClose}></div>
+        <div className="relative  w-[95%] overflow-y-hidden md:w-[60%] max-h-[90vh] overflow-y-auto bg-white rounded-[40px] shadow-2xl p-6 md:p-10 text-center animate-in zoom-in-95 duration-300">
           <div className="flex justify-center mb-6">
-            <div className="w-10 h-10 bg-[#F4F6F2] rounded-full flex items-center justify-center">
-              <img className='w-6 h-6' src={thankyouIcon} alt="" />
+            <div className="w-14 relative h-14  rounded-full flex items-center justify-center">
+              <div>
+              <img className='w-14 ' src={thankyouIconCircle} alt="" />
+              </div>
+                
+              <div>
+                 <img className='w-6 h-6 top-3/10  opacity-[75%] left-3/10 absolute ' src={thankyouIcon} alt="" />
+              </div>
             </div>
           </div>
-          <h2 className="text-xl md:text-2xl font-bold mb-4 bg-gradient-to-r from-[#94BD1C] to-[#29C28C] bg-clip-text text-transparent">You’re officially on the Nawaya waitlist!</h2>
+          <h2 className="text-xl md:text-2xl font-bold mb-4 bg-gradient-to-r from-[#94BD1C] to-[#29C28C] bg-clip-text text-transparent">You’re on the Nawaya Waitlist 🎉</h2>
           <p className="text-[#666666] text-center w-full md:w-[60%] md:ml-[20%] text-[10px] md:text-xs leading-relaxed mb-2">
-            Thank you for sharing your thoughts and joining our growing community of international learners and guides. You’ll receive a confirmation email shortly.
+            Thanks for joining our early community of learners and guides from around the world.
           </p>
           <div className='border-t my-4 border-[#AABD05] '></div>
 
-          <h2 className="text-md md:text-lg font-bold mb-2 bg-gradient-to-r from-[#94BD1C] to-[#29C28C] bg-clip-text text-transparent">You’re officially on the Nawaya waitlist!</h2>
+          <h2 className="text-md md:text-lg font-bold mb-2 bg-gradient-to-r from-[#94BD1C] to-[#29C28C] bg-clip-text text-transparent">Want to go one step deeper?</h2>
 
-          <p className='font-Urbanist text-xs md:text-sm mb-2 text-center p-3 text-black'>Be among the first 500 early members to get 30% off your first year, watch our exclusive message from our founder, and book a personal 15-minute call.
-            Limited to the first 500 members only. Once it’s gone, it’s gone.</p>
+         
+
+          <div className="max-w-md mb-2 mx-auto">
+  {/* Header Text */}
+  <p className="font-Urbanist text-xs md:text-sm font-semibold mb-6 text-center text-gray-800 px-3 leading-relaxed">
+    Become one of Nawaya’s first <span className="text-[#94BD1C]">500 founding members</span> and unlock:
+  </p>
+
+  {/* Styled List */}
+  <ul className="space-y-4 px-4">
+    {[
+      "An exclusive founder’s video sharing the vision behind Nawaya",
+      "A personal 15-minute 1:1 call with me",
+      "30% off your first year of Nawaya",
+      "Early member recognition inside the app"
+    ].map((item, index) => (
+      <li key={index} className="flex items-start gap-3">
+        {/* Custom Green Checkmark Icon */}
+        <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#94BD1C]/10 flex items-center justify-center mt-0.5">
+          <svg 
+            className="w-3 h-3 text-[#94BD1C]" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor" 
+            strokeWidth="3"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        
+        {/* List Content */}
+        <span className="font-Urbanist text-xs md:text-sm text-gray-600 leading-snug">
+          {item}
+        </span>
+      </li>
+    ))}
+  </ul>
+</div>
 
           <div className='flex md:flex-row flex-col gap-2 justify-center items-center'>
             <button onClick={onClose} type="button" className="btn-video cursor-pointer w-full md:w-auto">
-              <span className="btn-video__text text-[10px] md:text-xs">Close</span>
+              <span className="btn-video__text text-[10px] md:text-xs">Maybe later</span>
             </button>
 
             <NavLink to={"/exclusive"} className="w-full md:w-auto">
@@ -133,7 +177,7 @@ const SurveyModal = ({ onClose }) => {
                   background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)'
                 }}
               >
-                Pay $19.99 – Unlock My Access
+               Unlock Founding Access - $19.99
               </button>
             </NavLink>
 
@@ -163,7 +207,8 @@ const SurveyModal = ({ onClose }) => {
         {/* Form Body - Scrollable */}
         <div className="overflow-y-auto z-20 p-6 md:p-12 custom-scrollbar flex-1">
           <div className="text-center mb-8 md:mb-10">
-            <h3 className="text-xl md:text-3xl font-bold text-[#111111]">Help Us Make Nawaya Better</h3>
+            <h3 className="text-xl md:text-3xl font-bold text-[#111111]">Help Shape Nawaya From Day One</h3>
+            <p className='font-Urbanist text-sm text-gray-500 my-1'>Your answers help us build a meaningful experience for both growers and guides.</p>
           </div>
 
           <form id="survey-form" className="space-y-6" onSubmit={handleSubmit}>
@@ -191,10 +236,10 @@ const SurveyModal = ({ onClose }) => {
               required
               onChange={handleChange}
             >
-              <option value="" className="text-gray-500">Select what you are seeking at Nawaya*</option>
-              <option value="Mentorship">Mentorship</option>
-              <option value="Networking">Networking</option>
-              <option value="Growth">Growth Opportunities</option>
+              <option value="" className="text-gray-500">What brings you to Nawaya?*</option>
+              <option value="Mentorship">I want to grow and learn</option>
+              <option value="Networking">I want to guide others</option>
+              <option value="Growth">Both</option>
             </select>
 
             <div className="space-y-3">
@@ -240,7 +285,7 @@ const SurveyModal = ({ onClose }) => {
 
             <div className="space-y-3">
               <p className="font-bold text-left font-Urbanist text-[#111111] text-xs md:text-sm px-2">How would you like to grow?</p>
-              {['I want to connect with like-minded people', 'I want to join a growth circle', 'I\'m seeking 1:1 mentoring', 'Not sure yet'].map((growth) => (
+              {['Connect with like-minded people', 'Join a guided growth circle', 'Get 1:1 mentorship', 'I’m still exploring'].map((growth) => (
                 <label key={growth} className="flex font-Urbanist items-center gap-4 p-4 rounded-2xl bg-[#F4F6F2] cursor-pointer">
                   <input
                     type="checkbox"
@@ -261,11 +306,10 @@ const SurveyModal = ({ onClose }) => {
                 required
                 onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
               />
-              <span className="text-[10px] md:text-xs text-black font-Urbanist leading-relaxed">I agree to receive email updates and information about Nawaya's launch.</span>
+              <span className="text-[10px] md:text-xs text-black font-Urbanist leading-relaxed">I agree to receive updates about Nawaya’s launch and early access opportunities.</span>
             </label>
 
-            <p className='text-black text-[10px] md:text-xs text-left font-Urbanist pb-4'>We’re building <span className='font-bold'> Nawaya </span> together with our early community. Once we launch, we’ll reach out
-              with more details about membership and next steps</p>
+            <p className='text-black text-[10px] md:text-xs text-left font-Urbanist pb-4'><b>Nawaya </b> is being built with its early community. Once we launch, you’ll hear from us with next steps, early access details, and what’s coming first.</p>
           </form>
         </div>
 

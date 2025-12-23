@@ -12,28 +12,28 @@ const FeaturesSec = () => {
       image: ReachPeople,
       title: "Reach the Right People",
       description:
-        "Get matched with learners who genuinely value your experience and want to grow with your guidance.",
+        "Get discovered by learners who value your experience and are actively looking for guidance, not passive content consumers.",
     },
     {
       id: 2,
       image: SimpleSetup,
       title: "Simple Setup",
       description:
-        "Skip the tech headaches create sessions, programs, and events in minutes, all from one dashboard.",
+        "Create sessions, programs, and circles in minutes. No tech headaches, no complex tools, everything runs from one clear dashboard.",
     },
     {
       id: 3,
       image: Earn,
       title: "Earn with Purpose",
       description:
-        "Share your expertise, make an impact, and get rewarded through sessions, programs, and community events.",
+        "Set your own prices, guide in your own way, and earn through sessions, programs, and community experiences that actually help people grow.",
     },
     {
       id: 4,
       image: Track,
       title: "Track Your Impact",
       description:
-        "See how your sessions and programs perform with clear insights on engagement, feedback, and earnings.",
+        "Understand what works through clear insights on engagement, feedback, and earnings, so you can improve without guessing.",
     },
   ];
 
@@ -47,9 +47,9 @@ const FeaturesSec = () => {
           Built for Real Guides
         </h1>
         <p className="font-Urbanist font-normal text-Paragraph6 leading-relaxed tracking-normal text-textGray ">
-          Nawaya makes it easy to share your expertise, connect with the right 
+         Nawaya gives you the tools to share your knowledge, connect with learners who genuinely care, and grow your impact,
           <br />
-          learners, and grow your impact without the noise or complexity.
+          without chasing algorithms or building funnels.
         </p>
 
         {/* 3 feature cards to be added here later */}

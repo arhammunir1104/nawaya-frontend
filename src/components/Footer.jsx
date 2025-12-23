@@ -26,9 +26,9 @@ const linkColumns = [
   },
   {
     title: "Social",
-    email: "hello@nawaya.ai",
+    email: "hello@nawaya.io",
     links: [
-      { Icon: facebook, href: '#', name: 'Facebook', link:"#" },
+      // { Icon: facebook, href: '#', name: 'Facebook', link:"#" },
     { Icon: instagram, href: '#', name: 'Instagram',link:"#"  },
     { Icon: linkedin, href: '#', name: 'LinkedIn',link:"#" },
     { Icon: twitter, href: '#', name: 'Twitter', link:"#" },
@@ -60,24 +60,13 @@ const Footer = () => {
           {/* Column 1: Brand, Description, and Button (Spans 2 units on large screens) */}
           <div className="col-span-2 lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-               {/* Nawaya Logo Placeholder */}
-               {/* <div className="w-8 h-8 rounded-full bg-emerald-400 flex items-center justify-center">
-                  <span className="font-bold text-white">N</span>
-               </div>
-               <span className="text-xl font-bold text-white">Nawaya</span> */}
                <img src={footerIcon} alt="" />
+               <p className=" text-md text-white font-Urbanist leading-relaxed ">Where growth becomes a shared journey.</p>
             </div>
-            <p style={{color : TEXT_GRAY}} className=" text-sm leading-relaxed mb-6 max-w-sm">
-              Grow with guidance, not guesswork. Nawaya connects you with trusted coaches, learning circles, and programs to help you reach your goals with clarity and confidence.
+            <p style={{color : TEXT_GRAY}} className=" text-sm font-Urbanist leading-relaxed mb-6 max-w-sm">
+            Nawaya brings people together to grow and guide through live sessions, programs, and circles - creating meaningful progress through shared knowledge, real connection, and intentional learning.
             </p>
 
-            {/* CTA Button */}
-            {/* <button 
-                className="px-6 py-3 rounded-xl text-sm font-semibold text-white transition-all duration-300 shadow-md hover:opacity-90"
-                style={{ backgroundColor: PRIMARY_GREEN }}
-            >
-                Start Free Trial
-            </button> */}
              <div className="w-fit mt-6 relative z-10 ">
               
               <JoinWaitlist_Btn />

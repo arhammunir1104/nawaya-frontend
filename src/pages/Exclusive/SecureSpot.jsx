@@ -18,24 +18,15 @@ const SecureSpot = () => {
         {/* Content */}
         <div className="relative z-10 max-w-4xl">
           <h2 className="text-lg md:text-[56px] font-Urbanist font-bold text-[#111111] mb-4 tracking-tight leading-tight">
-            Secure Your Spot
+            Secure Your Founding Spot
           </h2>
           <p className="text-[#666666] text-md font-Urbanist  md:text-xl mb-12 max-w-2xl mx-auto">
-            Join Nawaya's founding community and grow with us from day one.
+           Join Nawaya’s founding community and help shape a platform built on intentional growth and real connection.
           </p>
 
-          {/* <button 
-            className="px-12 py-4 rounded-full text-white cursor-pointer text-md shadow-xl transition-all hover:scale-105 active:scale-95"
-            style={{
-              background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)'
-            }}
-          >
-            Pay $19.99 – Unlock My Access
-          </button>
-          
-          */}
+         
 
-          <PayButton text={"Pay $19.99 – Unlock My Access"} />
+          <PayButton text={"Unlock Founding Access - $19.99"} />
         </div>
       </section>
 
@@ -68,8 +59,10 @@ const SecureSpot = () => {
           {/* Spots Remaining Text */}
           <div className="text-center mt-2">
             <h3 className="text-md   text-[#111111] tracking-tight">
-              Only 500 early member spots available. 472 of 500 Remaining
+              Limited to 500 founding members · Once filled, access closes
             </h3>
+
+            <p className='text-gray-500 text-sm'>This is a one-time early access offer. No recurring charges today. Your Nawaya subscription begins only after launch.</p>
           </div>
         </div>
       </section>

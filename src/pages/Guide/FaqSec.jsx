@@ -14,27 +14,30 @@ const faqs = [
   {
     id: 1,
     question: "How do I become a guide on Nawaya?",
-    answer: "You can start by navigating to the 'Goals' tab in your dashboard. Click 'New Goal', select a template or create a custom one, and define your key metrics and milestones.",
+    answer: "Create a profile and join the waitlist. Once approved, you’ll be able to set up sessions, programs, or circles and start guiding.",
   },
   {
     id: 2,
     question: "Do I need prior coaching experience?",
-    answer: "No formal coaching experience is required. If you have real-world expertise and a genuine desire to help others, Nawaya gives you the tools to share your knowledge effectively — from structured sessions to guided programs.",
+    answer: `No formal coaching title is required. What matters is real-world experience, clarity, and a genuine desire to help others grow.
+That said, all Guides on Nawaya go through a screening and verification process. We review backgrounds, experience, and intent to ensure Guides are who they claim to be and can provide meaningful, high-quality guidance.
+This helps protect learners, maintain trust, and create a strong experience for everyone on the platform.
+`,
   },
   { 
     id: 3,
     question: "How do I earn from sessions or programs?",
-    answer: "Absolutely. Naway supports native integrations with major platforms like Slack, Google Analytics, and various CRM systems. Check the 'Integrations' section for a complete list and setup instructions.",
+    answer: "You earn by hosting paid sessions, programs, or community experiences. Nawaya takes a small platform fee to support discovery, tools, and payments.",
   },
   {
     id: 4,
     question: "Can I set my own prices and schedule?",
-    answer: "We offer 24/7 priority support via chat and email for all paid plans. Users on the Basic plan can access our comprehensive knowledge base and community forums.",
+    answer: "Yes. You’re fully in control of your pricing, availability, and format.",
   },
   {
     id: 5,
     question: "How does Nawaya help me get discovered?",
-    answer: "Data security is our top priority. We use industry-leading encryption protocols (AES-256) for data at rest and TLS 1.3 for data in transit. We are fully GDPR compliant.",
+    answer: "Nawaya matches Guides with learners based on goals, interests, and relevance - so the right people find you without needing a large audience.",
   },
 ];
 

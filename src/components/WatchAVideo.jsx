@@ -80,8 +80,8 @@ const WatchAVideo = () => {
         className="btn-video cursor-pointer"
         onClick={() => setIsOpen(true)}
       >
-        <span className="btn-video__text text-[10px] xs:text-xs md:text-sm 2xl:text-base font-bold uppercase tracking-wider">
-          Watch a video
+        <span className="btn-video__text text-[10px] xs:text-xs md:text-lg 2xl:text-base   tracking-wider">
+         Watch a short preview 
         </span>
       </button>
 

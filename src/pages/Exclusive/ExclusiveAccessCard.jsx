@@ -1,5 +1,5 @@
 import React from 'react';
-import frame1 from "../../assets/Exclusive/fram1.png"
+import frame1 from "../../assets/Exclusive/frame.png"
 import PayButton from '../../components/PayButton';
 
 const ExclusiveAccessCard = () => {
@@ -24,8 +24,7 @@ const ExclusiveAccessCard = () => {
           </h1>
           
           <p className="text-gray-500 text-sm md:text-base leading-relaxed max-w-md">
-            For a limited time, you can unlock an exclusive message from our founder 
-            and join the circle of Nawaya's first 500 early supporters.
+For a limited time, unlock a private founder message and join the circle of Nawaya’s first 500 founding members shaping what comes next.
           </p>
 
           {/* <button className="mt-4 px-8 py-4 rounded-full text-white font-medium transition-transform hover:scale-105 active:scale-95 shadow-lg"
@@ -35,7 +34,7 @@ const ExclusiveAccessCard = () => {
             Unlock Access for $19.99 (save $30)
           </button> */}
 
-          <PayButton text={"Unlock Access for $19.99 (save $30)"} />
+          <PayButton text={"Unlock Access - $19.99 (save 30%)"} />
         </div>
 
         {/* Image Section */}

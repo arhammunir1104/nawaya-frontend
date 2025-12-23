@@ -14,27 +14,30 @@ const faqs = [
   {
     id: 1,
     question: "What makes Nawaya different from online courses?",
-    answer: "You can start by navigating to the 'Goals' tab in your dashboard. Click 'New Goal', select a template or create a custom one, and define your key metrics and milestones.",
+    answer: "Nawaya is built around real human connection. Instead of watching content alone, you learn with Guides, join live sessions, and grow alongside others - with feedback, interaction, and accountability.",
   },
   {
     id: 2,
-    question: "How do I find the right coach or guide?",
-    answer: "Nawaya matches you with guides based on your goals, interests, and learning style. You can also browse profiles, read reviews, and choose someone who truly understands your journey.",
+    question: "How do I find the right Guide?",
+    answer: "You can get matched based on your goals and interests, or explore Guide profiles, backgrounds, and offerings to choose who resonates with you most.",
   },
   { 
     id: 3,
     question: "Are sessions live or recorded?",
-    answer: "Absolutely. Naway supports native integrations with major platforms like Slack, Google Analytics, and various CRM systems. Check the 'Integrations' section for a complete list and setup instructions.",
+    answer: "Most sessions are live to encourage interaction and connection. Some programs may include recordings or follow-up material, depending on the Guide.",
   },
   {
     id: 4,
     question: "How much does it cost to use Nawaya?",
-    answer: "We offer 24/7 priority support via chat and email for all paid plans. Users on the Basic plan can access our comprehensive knowledge base and community forums.",
+    answer: `Nawaya is available for $19.99 per month.
+This gives you access to the platform, community features, and the ability to join programs and live sessions hosted by Guides.
+Individual sessions or programs may be priced separately by Guides, depending on the format and depth.
+`,
   },
   {
     id: 5,
     question: "Can I switch or message my guide after booking?",
-    answer: "Data security is our top priority. We use industry-leading encryption protocols (AES-256) for data at rest and TLS 1.3 for data in transit. We are fully GDPR compliant.",
+    answer: "Yes. You can message your Guide directly, ask questions, and switch paths if your needs change. Growth should feel flexible, not locked in.",
   },
 ];
 

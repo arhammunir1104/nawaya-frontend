@@ -15,21 +15,21 @@ const FeaturesSec = () => {
             icon: <LuGraduationCap size={24} color="#3E9218" />,
             image: Personalized,
             title: "Personalized Guidance",
-            description: "Get matched with verified coaches who understand your journey and help you move forward with clarity.",
+            description: "Get matched with verified Guides who understand your journey and support you with clarity, accountability, and real-world experience.",
         },
          {
             id : 2,
             icon: <LuBookMarked size={24} color="#3E9218" />,
             image: Grow,
             title: "Grow at Your Own Pace",
-            description: "Learn through practical, self-paced programs designed by experienced guides who’ve walked the same path.",
+            description: "Follow structured programs and live sessions designed to fit into real life - without pressure, overwhelm, or empty motivation.",
         },
          {
             id : 3,
             icon: <LuUsersRound size={24} color="#3E9218" />,
             image: Learn,
             title: "Learn Together",
-            description: "Create or join communities where you can share ideas, exchange experiences, and learn alongside others on similar paths.",
+            description: "Join circles and group sessions where shared growth, honest conversations, and collective momentum make progress easier - and more human.",
         }
     ]
   return (
@@ -42,13 +42,13 @@ const FeaturesSec = () => {
         </h3>
         <h1 className="font-Urbanist mt-1 font-semibold leading-tight tracking-tight capitalize text-textPrimary
                 xs:text-Heading8 sm:text-Heading6 md:text-Heading5 lg:text-Heading4 xl:text-Heading3 2xl:text-Heading1">
-          Made for real learning
+          Made For Real Growth
         </h1>
         <p className="font-Urbanist font-normal leading-relaxed tracking-normal text-textGray 
                 xs:text-Paragraph6 xs:mt-3 md:text-Paragraph5 lg:text-Paragraph4 lg:mt-6">
-          Discover guides, programs, and circles that make learning personal, 
+         Nawaya combines human guidance, structure, and community 
           <br className="hidden md:inline" />
-          practical, and easy to stay consistent with.
+          so learning actually turns into action.
         </p>
       
 

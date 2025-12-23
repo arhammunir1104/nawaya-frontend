@@ -12,7 +12,7 @@ const Grower = () => {
       <HeroGrower/>
       <FeaturesSec/>
       <JourneySec />
-      <ExclusiveAccessCard />
+      <ExclusiveAccessCard headline={"Ready to take your growth journey to the next level?"} subheadline={"Join Nawaya’s first circle of early members and receive a personal message from the founder about why this platform exists, and how you can help shape it from the start."} /> 
       <FaqSec />
     </section>
   )

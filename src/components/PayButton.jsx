@@ -14,7 +14,7 @@ function PayButton({text}) {
        { headers : {
         'Authorization': `Bearer ${tempToken}`,
           'Content-Type': 'application/json'
-        }}
+        }} 
       );
 
       if(response?.data?.status == "success"){

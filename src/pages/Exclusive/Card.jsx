@@ -7,23 +7,23 @@ import icon4 from "../../assets/Exclusive/icon4.png"
 // Card Data for easy maintenance
 const features = [
   {
-    title: "Exclusive Founder’s Video",
-    description: "Watch immediately after payment.",
+    title: "Founder’s Message",
+    description: "Watch an exclusive video sharing why Nawaya exists and where it’s going.",
     icon: icon1
   },
   {
-    title: "15-minute",
-    description: "15-minute 1:1 Founder Call.",
+    title: "15-Minute 1:1 Call",
+    description: "Book a personal conversation with the founder to share ideas or ask questions.",
     icon: icon2
   },
   {
-    title: "Nawaya subscription",
-    description: "30% discount on your first Nawaya subscription year.",
+    title: "Subscription Benefit",
+    description: "Get 30% off your first year of Nawaya once we launch.",
     icon: icon3
   },
   {
-    title: "Member Badge",
-    description: "Early Member Badge inside the future app",
+    title: "Early Member Badge",
+    description: "Be recognized as a founding member inside the future app.",
     icon: icon4
   }
 ];
