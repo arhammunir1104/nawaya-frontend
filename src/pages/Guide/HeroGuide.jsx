@@ -18,7 +18,7 @@ const HeroGuide = () => {
           <br className='' />
          Guide With Purpose.
         </h1>
-        <p className="font-Urbanist font-normal leading-relaxed tracking-normal text-textGray mt-6 
+        <p className="font-Urbanist mx-2 font-normal leading-relaxed tracking-normal text-textGray mt-6 
                 xs:text-Paragraph6 md:text-Paragraph5 lg:text-Paragraph4">
          You don’t need a massive following to make an impact. Nawaya helps you reach the right people,
           <br />

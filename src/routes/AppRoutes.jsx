@@ -13,6 +13,8 @@ import AdminLogin from '../pages/AdminLogin'
 import Guide from '../pages/Guide/Guide'
 import Grower from '../pages/Grower/Grower'
 import Thankyou from '../pages/Thankyou'
+import PrivacyPage from '../pages/PrivacyPage'
+import TermPage from '../pages/TermsPage'
 
 const AppRoutes = () => {
   const [role, setRole] = useState('grower')
@@ -30,6 +32,8 @@ const AppRoutes = () => {
             <Route path='/user' element={<UserDashboard />} />
             <Route path='/login' element={<Login />} />
             <Route path='/thankyou' element={<Thankyou />} />
+            <Route path='/privacy-policy' element={<PrivacyPage />} />
+            <Route path='/terms-of-use' element={<TermPage />} />
         </Routes>
       <Footer />
     </BrowserRouter>

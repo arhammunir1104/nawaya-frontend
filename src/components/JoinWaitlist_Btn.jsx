@@ -9,7 +9,7 @@ const JoinWaitlist_Btn = () => {
   useEffect(() => {
     if (isModalOpen) {
       document.body.style.overflow = 'hidden';
-      window.scrollTo(0,0)
+      // window.scrollTo(0,0)
     } else {
       document.body.style.overflow = 'unset';
     }
