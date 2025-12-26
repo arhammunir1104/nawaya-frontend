@@ -4,6 +4,7 @@ import Banner1 from "../../assets/Grower/SessionsGrowerMobile.png";
 import JoinWaitlist_Btn from "../../components/JoinWaitlist_Btn";
 import LeftShade from "../../assets/Grower/LeftShade.png"
 import RightShade from "../../assets/Grower/RightShade.png"
+import WatchAVideoGuide from "../../components/WatchAVideoGuide"
 
 const HeroGrower = () => {
   return (
@@ -22,12 +23,18 @@ const HeroGrower = () => {
                 xs:text-Paragraph6 md:text-Paragraph5 lg:text-Paragraph4">
           Connect with experienced Guides, join live growth circles, and follow structured paths
           <br className="xs:hidden lg:inline" />
-          designed around your goals with real people, real feedback, and real progress.
+          designed around your goals - with real people, real feedback, and real progress.
         </p>
 
         {/* Button Join the waitlist */}
-        <div className="w-fit mt-6  relative z-8 ">
+        <div className="w-fit mt-6 flex flex-row gap-2  relative z-8 ">
+          <div>
           <JoinWaitlist_Btn />
+          </div>
+
+          <div>
+            <WatchAVideoGuide />
+          </div>
         </div>
       </div>
 

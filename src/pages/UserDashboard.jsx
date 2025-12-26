@@ -191,8 +191,8 @@ const ExpiredMembershipView = () => {
             <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Need Assistance?</p>
             <div className="flex items-center justify-center gap-2 text-[#111111] font-semibold">
               <IoMdMail className="text-[#94BD1C]" size={20} />
-              <a href="mailto:admin@nawaya.community" className="hover:text-[#94BD1C] transition-colors">
-                admin@nawaya.community
+              <a href="mailto:support@nawaya.io" className="hover:text-[#94BD1C] transition-colors">
+                support@nawaya.io
               </a>
             </div>
           </div>

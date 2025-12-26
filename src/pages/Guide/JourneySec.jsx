@@ -36,11 +36,11 @@ const JourneySec = () => {
 
   return (
     <section id='how-it-works' className="font-sans bg-[#F0F1F2] py-12 md:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl px-8 mx-auto">
         
-        <div className='mb-8 mx-auto px-6 text-center flex flex-col items-center-safe xs:w-[90vw] xl:w-[90vw] 2xl:w-[1400px]'>
+        <div className='mb-8 mx-auto px-6  text-center flex flex-col items-center-safe '>
           <h3 className="font-Buenard font-bold xs:text-Paragraph4 lg:text-Paragraph2 text-textGreen">
-            How it works
+            How it works 
           </h3>
           <h1 className="font-Urbanist mt-1 font-semibold leading-tight tracking-tight capitalize text-textPrimary xs:text-Heading8 sm:text-Heading6 md:text-Heading5 lg:text-Heading4 xl:text-Heading3 2xl:text-Heading1">
            From Knowledge to Impact

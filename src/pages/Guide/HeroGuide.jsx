@@ -4,6 +4,7 @@ import Banner1 from "../../assets/Guide/HomeGuideMobile.png"
 import JoinWaitlist_Btn from "../../components/JoinWaitlist_Btn";
 import LeftShade from "../../assets/Grower/LeftShade.png"
 import RightShade from "../../assets/Grower/RightShade.png"
+import WatchAVideoGuide from '../../components/WatchAVideoGuide';
 
 const HeroGuide = () => {
   return (
@@ -26,8 +27,13 @@ const HeroGuide = () => {
         </p>
 
         {/* Button Join the waitlist */}
-        <div className="w-fit mt-6 relative z-10 ">
+        <div className="w-fit mt-6 flex flex-row gap-2 relative z-10 ">
+          <div>
           <JoinWaitlist_Btn  />
+          </div>
+          <div>
+            <WatchAVideoGuide />
+          </div>
         </div>
       </div>
 

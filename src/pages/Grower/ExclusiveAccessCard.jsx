@@ -33,7 +33,7 @@ const ExclusiveAccessCard = ({headline  , subheadline }) => {
           </p>
 
           
-              <div className="flex w-[100%] flex-col sm:flex-row items-center justify-center gap-4 mb-16 md:mb-24">
+              <div className="flex w-[100%] md:w-[120%]  flex-col sm:flex-row items-center justify-center gap-4 mb-16 md:mb-24">
                           <div className="relative w-full sm:max-w-md group">
                             <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
                               <IoMdMail className="text-gray-400 group-focus-within:text-[#94BD1C]" size={20} />
@@ -57,11 +57,14 @@ const ExclusiveAccessCard = ({headline  , subheadline }) => {
 
         {/* Image Section */}
         <div className="relative  z-10 w-full  md:w-2/5 flex md:justify-center md:items-center justify-end items-end ">
+         
+
           <img 
             src={frame1} // Replace with your actual image path
             alt="3D Abstract Knot" 
             className="md:w-full md:flex hidden md:h-full object-cover h-[350px] w-[350px] text-right items-end justify-end drop-shadow-2xl"
-          />
+            />
+       
 
            <img 
             src={frame2} // Replace with your actual image path

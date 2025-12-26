@@ -112,7 +112,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.625rem 1.5rem;
+  padding: .45rem 1rem;
   border-radius: 50px;
   font-weight: 600;
   font-family: var(--font-Urbanist, system-ui, sans-serif);
@@ -148,7 +148,6 @@
   background-origin: padding-box, border-box;
   background-clip: padding-box, border-box;
   color: transparent; /* text handled by inner span */
-  transform: translateY(-1px);
   box-shadow: 0 6px 18px rgba(11,191,149,0.06);
 }
 
