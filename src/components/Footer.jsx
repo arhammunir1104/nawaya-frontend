@@ -19,7 +19,7 @@ const linkColumns = [
   {
     title: "Links",
     links: [{text: "How it works", link :"#how-it-works"}, {text: "Features", link :"#features"},{text: "FAQ", link :"#faq"}],
-  },
+  },   
   {
     title: "Legal",
     links: [{text: "Privacy Policy", link :"/privacy-policy"}, {text: "Term of Use", link :"/terms-of-use"}, {text: "Cookie Policy", link :"/cookie-policy"}],
