@@ -46,7 +46,7 @@ const FeaturesSec = () => {
         </h1>
         <p className="font-Urbanist font-normal leading-relaxed tracking-normal text-textGray 
                 xs:text-Paragraph6 xs:mt-3 md:text-Paragraph5 lg:text-Paragraph4 lg:mt-6">
-         Nawaya combines human guidance, structure, and community 
+         Nawaya combines human guidance, structure, and community -
           <br className="hidden md:inline" />
           so learning actually turns into action.
         </p>

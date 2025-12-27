@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
 import { GrMenu } from "react-icons/gr";
 import { FaChevronDown, FaThLarge, FaSignOutAlt, FaUserAlt } from "react-icons/fa";
-import Logo from "../assets/logo3.png";
+import Logo from "../assets/logo.svg";
 import RoleToggle from "../components/RoleToggle";
 import SideBar from "./SideBar";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";

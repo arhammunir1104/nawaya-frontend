@@ -2,10 +2,10 @@ import React from 'react';
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import footerIcon from "../assets/General/footer-icon.png"
 import JoinWaitlist_Btn from "./JoinWaitlist_Btn";
-import facebook from "../assets/General/facebook.png";
 import instagram from "../assets/General/instagram.png";
 import linkedin from "../assets/General/linkedin.png";
 import twitter from "../assets/General/twitter.jpg";
+import tiktok from "../assets/General/tik-tok.jpg";
 import { Link } from 'react-router-dom';
 
 // --- DESIGN CONSTANTS ---
@@ -22,15 +22,16 @@ const linkColumns = [
   },
   {
     title: "Legal",
-    links: [{text: "Privacy Policy", link :"/privacy-policy"}, {text: "Term of Use", link :"/terms-of-use"}],
+    links: [{text: "Privacy Policy", link :"/privacy-policy"}, {text: "Term of Use", link :"/terms-of-use"}, {text: "Cookie Policy", link :"/cookie-policy"}],
   },
   {
     title: "Social",
     email: "hello@nawaya.io",
     links: [
-      { Icon: instagram, href: '#', name: 'Instagram', link: "#" },
-      { Icon: linkedin, href: '#', name: 'LinkedIn', link: "#" },
-      { Icon: twitter, href: '#', name: 'Twitter', link: "#" },
+      { Icon: tiktok,  name: 'Tik Tok', link: "https://www.tiktok.com/@nawaya.app?lang=en" },
+      { Icon: instagram,  name: 'Instagram', link: "https://www.instagram.com/nawaya.growth" },
+      { Icon: linkedin,  name: 'LinkedIn', link: "https://www.linkedin.com/company/nawaya-app" },
+      { Icon: twitter,  name: 'Twitter', link: "https://x.com/nawaya_growth" },
     ]
   },
 ];
@@ -89,9 +90,9 @@ const Footer = () => {
             </a>
             <div className="flex space-x-4 pt-4">
               {linkColumns[2].links.map((item, idx) => (
-                <Link key={idx} to={item.link}>
+                <Link key={idx} target='_blank' to={item.link}>
                   <div className="hover:opacity-80 transition-opacity">
-                    <img src={item.Icon} className='md:w-8 md:h-8 w-6 h-6 rounded-lg' alt={item.name} />  
+                    <img src={item.Icon} className='md:w-8 md:h-8 w-6 h-6 rounded-[100%]' alt={item.name} />  
                   </div>
                 </Link>
               ))}

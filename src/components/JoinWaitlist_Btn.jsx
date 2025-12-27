@@ -13,7 +13,7 @@ const JoinWaitlist_Btn = () => {
     } else {
       document.body.style.overflow = 'unset';
     }
-  }, [isModalOpen]);
+  }, [isModalOpen]); 
 
   return (
 

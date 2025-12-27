@@ -25,13 +25,13 @@ const WatchAVideoGuide = () => {
       ></div>
 
       {/* Modal Content - Your original structure */}
-      <div className="relative w-full max-w-4xl bg-white rounded-[30px] md:rounded-[50px] shadow-2xl overflow-hidden flex flex-col max-h-[80dvh] animate-in zoom-in-95 duration-300">
+      <div className="relative overflow-y-hidden w-full max-w-4xl bg-white rounded-[30px] md:rounded-[50px] shadow-2xl overflow-hidden flex flex-col max-h-[80dvh] animate-in zoom-in-95 duration-300">
         
-        <div className="overflow-y-auto p-5 md:p-10 custom-scrollbar">
+        <div className=" p-5 overflow-y-hidden md:p-10 custom-scrollbar">
           
           {/* Header */}
           <h2 className="text-[#94BD1C] font-serif text-lg md:text-2xl font-bold mb-3 md:mb-5 text-left leading-tight">
-            A Message that Awakens Hearts and Minds!
+            A Journey of Intention and Growth
           </h2>
 
           {/* Video Placeholder Section - Kept same size/structure */}
@@ -44,26 +44,14 @@ const WatchAVideoGuide = () => {
              </div>
           </div>
 
-          {/* Text Content */}
-          <div className="mt-5 md:mt-7">
-            <h3 className="text-[#94BD1C] font-serif text-base md:text-xl font-bold mb-1 md:mb-2 text-left">
-              Take the Next Step in This Journey
-            </h3>
-            <p className="text-[#666666] text-[10px] md:text-sm leading-relaxed max-w-3xl font-Urbanist text-left">
-              You can schedule a personal call with our team and become a Premium Member of the waitlist. 
-              Your contribution helps us build a global platform for unity, awareness, and growth of the 
-              Muslim Ummah. <span className="font-bold text-[#111111]">Join for just $9.99 (30% OFF)</span> — 
-              a small step with a great purpose.
-            </p>
-          </div>
 
           {/* Action Buttons */}
-          <div className="mt-5 md:mt-7 flex flex-col sm:flex-row justify-end gap-3">
+          <div className="mt-5 md:mt-7 flex flex-row justify-end gap-3">
             <div>
              <button 
               onClick={() => setIsOpen(false)}
-              className="px-6 cursor-pointer md:px-8 py-2 md:py-2.5 rounded-full border border-[#94BD1C] text-[#94BD1C] font-bold text-[10px] md:text-sm hover:bg-[#F4F6F2] transition-colors order-2 sm:order-1"
-              >
+              className="px-6 cursor-pointer md:px-8 py-[11px]  rounded-full border border-[#94BD1C] text-[#94BD1C] font-bold font-Urbanist md:text-sm hover:bg-[#F4F6F2] transition-colors order-2 sm:order-1"
+              > 
               Close
             </button>
               </div>           
@@ -82,13 +70,31 @@ const WatchAVideoGuide = () => {
 
   return (
     <>
-      <button 
+
+          <button 
         type="button" 
-        className="btn-video cursor-pointer"
         onClick={() => setIsOpen(true)}
+        className="group relative inline-flex items-center justify-center px-6 py-[10px] rounded-full font-semibold font-Urbanist transition-all duration-300 cursor-pointer overflow-hidden shadow-[0_8px_22px_rgba(11,191,149,0.12)] active:scale-95"
       >
-        <span className="btn-video__text md:text-[1.1rem] font-bold  ">
-         Watch a Video
+        {/* 1. THE GRADIENT BORDER LAYER (Always there) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#AABD05] to-[#0CBF95]"></div>
+
+        {/* 2. NORMAL STATE: White background that disappears on hover */}
+        {/* Iske upar p-[2px] ki wajah se default mein border dikhega */}
+        <div className="absolute inset-[2px] bg-white rounded-full transition-opacity duration-300 group-hover:opacity-0"></div>
+
+        {/* 3. BUTTON TEXT */}
+        <span className="relative z-10 transition-all duration-300 xs:text-Paragraph6 2xl:text-Paragraph4 font-bold
+          /* Default: Gradient Text */
+          bg-gradient-to-r from-[#AABD05] to-[#0CBF95] bg-clip-text text-transparent
+
+          /* Hover: Solid White */
+          group-hover:text-white group-hover:bg-none
+
+          /* Active: Slightly dimmed white */
+          group-active:text-[#F4F6F2] group-active:bg-none
+        ">
+          Watch a Video
         </span>
       </button>
 

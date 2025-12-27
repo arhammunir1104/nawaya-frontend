@@ -15,6 +15,7 @@ import Grower from '../pages/Grower/Grower'
 import Thankyou from '../pages/Thankyou'
 import PrivacyPage from '../pages/PrivacyPage'
 import TermPage from '../pages/TermsPage'
+import CookiePolicy from '../pages/CookiePolicy'
 
 const AppRoutes = () => {
   const [role, setRole] = useState('grower')
@@ -34,6 +35,8 @@ const AppRoutes = () => {
             <Route path='/thankyou' element={<Thankyou />} />
             <Route path='/privacy-policy' element={<PrivacyPage />} />
             <Route path='/terms-of-use' element={<TermPage />} />
+            <Route path='/cookie-policy' element={<CookiePolicy />} />
+            cookie-policy
         </Routes>
       <Footer />
     </BrowserRouter>
