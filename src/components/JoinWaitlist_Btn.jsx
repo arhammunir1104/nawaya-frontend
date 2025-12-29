@@ -33,7 +33,7 @@ const JoinWaitlist_Btn = () => {
     </div>
 
     {/* 3. BUTTON TEXT */}
-    <span className="relative z-10 transition-all duration-300 xs:text-Paragraph6 2xl:text-Paragraph4 font-bold
+    <span className="relative z-10 transition-all duration-300 xs:text-Paragraph7 2xl:text-Paragraph4 font-bold
       /* Default: Solid White */
       text-white 
       /* Hover: Gradient Text */

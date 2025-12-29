@@ -10,7 +10,7 @@ const ExclusiveAccessCard = ({headline  , subheadline }) => {
   return (
     <div className=" pb-10  bg-gray-100 flex items-center justify-center ">
       {/* Main Container */}
-      <div className="relative md:mx-[0] mx-[5%] w-full h-auto md:h-[350px] max-w-5xl bg-white rounded-[40px] overflow-hidden shadow-sm flex flex-col md:flex-row ">
+      <div className="relative md:mx-[0] mx-[5%] w-full h-auto md:h-[350px] max-w-5xl bg-white border-2 rounded-[40px] overflow-hidden shadow-sm flex flex-col md:flex-row ">
         
         {/* Background Gradient Slash (The Green Right Side) */}
         <div 

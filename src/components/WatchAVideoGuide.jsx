@@ -84,7 +84,7 @@ const WatchAVideoGuide = () => {
         <div className="absolute inset-[2px] bg-white rounded-full transition-opacity duration-300 group-hover:opacity-0"></div>
 
         {/* 3. BUTTON TEXT */}
-        <span className="relative z-10 transition-all duration-300 xs:text-Paragraph6 2xl:text-Paragraph4 font-bold
+        <span className="relative z-10 transition-all duration-300 xs:text-Paragraph7 2xl:text-Paragraph4 font-bold
           /* Default: Gradient Text */
           bg-gradient-to-r from-[#AABD05] to-[#0CBF95] bg-clip-text text-transparent
 
@@ -94,7 +94,7 @@ const WatchAVideoGuide = () => {
           /* Active: Slightly dimmed white */
           group-active:text-[#F4F6F2] group-active:bg-none
         ">
-          Nawaya Explain
+          Nawaya Explained
         </span>
       </button>
 
