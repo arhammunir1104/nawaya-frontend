@@ -1,6 +1,7 @@
 import React from 'react';
 import frame1 from "../../assets/Exclusive/frame.png"
 import PayButton from '../../components/PayButton';
+import frame2 from "../../assets/Exclusive/frame2.png"
 
 const ExclusiveAccessCard = () => {
   return (
@@ -11,7 +12,7 @@ const ExclusiveAccessCard = () => {
         {/* Background Gradient Slash (The Green Right Side) */}
         <div 
           className="absolute right-0 top-0 h-full w-full md:w-1/2 opacity-30 pointer-events-none"
-          style={{
+          style={{ 
             background: 'linear-gradient(135deg, transparent 40%, #D4EFC7 100%)',
             clipPath: 'polygon(20% 0, 100% 0, 100% 100%, 0% 100%)'
           }}
@@ -27,24 +28,28 @@ const ExclusiveAccessCard = () => {
 For a limited time, unlock a private founder message and join the circle of Nawaya’s first 500 founding members shaping what comes next.
           </p>
 
-          {/* <button className="mt-4 px-8 py-4 rounded-full text-white font-medium transition-transform hover:scale-105 active:scale-95 shadow-lg"
-            style={{
-              background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)'
-            }}>
-            Unlock Access for $19.99 (save $30)
-          </button> */}
+         
 
           <PayButton text={"Unlock Access - $19.99 (save 30%)"} />
         </div>
 
-        {/* Image Section */}
-        <div className="md:relative absolute z-10 w-full  md:w-2/5 flex md:justify-center md:items-center justify-end items-end ">
-          <img 
-            src={frame1} // Replace with your actual image path
-            alt="3D Abstract Knot" 
-            className="md:w-full md:h-full object-cover h-[300px] w-[300px] text-right items-end justify-end drop-shadow-2xl"
-          />
-        </div>
+         {/* Image Section */}
+                <div className="relative  z-10 w-full  md:w-2/5 flex md:justify-center md:items-center justify-end items-end ">
+                 
+        
+                  <img 
+                    src={frame1} // Replace with your actual image path
+                    alt="3D Abstract Knot" 
+                    className="md:w-full md:flex hidden md:h-full object-cover h-[350px] w-[350px] text-right items-end justify-end drop-shadow-2xl"
+                    />
+               
+        
+                   <img 
+                    src={frame2} // Replace with your actual image path
+                    alt="3D Abstract Knot" 
+                    className="md:w-full md:hidden  mt-[-20%]  flex md:h-full object-cover w-[100%]  text-right items-end justify-end drop-shadow-2xl"
+                  />
+                </div>
       </div>
     </div>
   );

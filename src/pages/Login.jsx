@@ -48,11 +48,11 @@ const Login = () => {
         
         // Update global context
         setToken(token);
-        toast.success("Loggedin Successfully.")
+        toast.success("Logged In Successfully.")
         // Redirect to home or dashboard
 
         setTimeout(()=>{
-          navigate("/");
+          navigate("/user");
         }, 1000)
       }
     } catch (error) {

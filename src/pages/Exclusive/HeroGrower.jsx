@@ -30,7 +30,7 @@ const HeroGrower = () => {
         </p>
 
         {/* Button Join the waitlist */}
-        <div className="flex mt-2 flex-row gap-4 items-center justify-center">
+        <div className="flex mt-2 flex-col md:flex-row gap-4 items-center justify-center">
 
           <div className="z-2">
             <PayButton text={"Unlock Access for $19.99"} />

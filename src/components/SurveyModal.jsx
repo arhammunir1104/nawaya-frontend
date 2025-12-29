@@ -164,24 +164,42 @@ const SurveyModal = ({ onClose }) => {
     ))}
   </ul>
 </div>
+<div className='flex md:flex-row mt-4 flex-col gap-3 justify-center items-center'>
+  {/* Maybe Later Button - Styled to match Watch Preview button size and design */}
+  <button 
+    onClick={onClose} 
+    type="button" 
+    className="group relative inline-flex items-center justify-center px-10 py-3 rounded-full font-semibold font-Urbanist transition-all duration-300 cursor-pointer overflow-hidden shadow-xl active:scale-95 hover:scale-105 w-full md:w-auto"
+  >
+            {/* 1. THE GRADIENT BORDER LAYER */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#94BD1C] to-[#29C28C]"></div>
 
-          <div className='flex md:flex-row flex-col gap-2 justify-center items-center'>
-            <button onClick={onClose} type="button" className="btn-video cursor-pointer w-full md:w-auto">
-              <span className="btn-video__text text-[10px] md:text-xs">Maybe later</span>
+            {/* 2. WHITE BACKGROUND (Inside the border) */}
+            <div className="absolute inset-[2px] bg-white rounded-full transition-opacity duration-300 group-hover:opacity-0"></div>
+
+            {/* 3. BUTTON TEXT */}
+            <span className="relative z-10 transition-all duration-300 text-sm md:text-md font-bold
+              /* Default: Gradient Text */
+              bg-gradient-to-r from-[#94BD1C] to-[#29C28C] bg-clip-text text-transparent
+              /* Hover: Solid White */
+              group-hover:text-white group-hover:bg-none
+            ">
+              Maybe later
+            </span>
+          </button>
+
+          {/* Unlock Access Button */}
+          <NavLink to={"/exclusive"} className="w-full md:w-auto">
+            <button
+              className="w-full px-10 py-3 rounded-full text-white cursor-pointer text-sm md:text-md shadow-xl transition-all hover:scale-105 active:scale-95 font-bold font-Urbanist"
+              style={{
+                background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)'
+              }}
+            >
+              Unlock Founding Access - $19.99
             </button>
-
-            <NavLink to={"/exclusive"} className="w-full md:w-auto">
-              <button
-                className="w-full px-10 py-3 rounded-full text-white cursor-pointer text-sm md:text-md shadow-xl transition-all hover:scale-105 active:scale-95"
-                style={{
-                  background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)'
-                }}
-              >
-               Unlock Founding Access - $19.99
-              </button>
-            </NavLink>
-
-          </div>
+          </NavLink>
+        </div>
         </div>
       </div>
     );
@@ -315,17 +333,11 @@ const SurveyModal = ({ onClose }) => {
 
         {/* Footer - Fixed/Sticky at Bottom */}
         <div className="shrink-0 p-5 md:p-8 bg-white border-t border-gray-100 flex flex-col sm:flex-row gap-4">
-          {/* <button
-            type="button"
-            onClick={onClose}
-            className="flex-1 py-3 md:py-4 rounded-full border-2 border-[#94BD1C] text-[#94BD1C] font-bold hover:bg-[#F9FBF7] transition-all text-sm md:text-base"
-          >
-            Go Back
-          </button> */}
+        
           <button
             type="submit"
             form="survey-form"
-            className="flex-1 py-3 md:py-4 rounded-full text-white font-bold shadow-lg transition-transform active:scale-95 text-sm md:text-base"
+            className="flex-1 py-3 cursor-pointer md:py-4 rounded-full text-white font-bold shadow-lg transition-transform active:scale-95 text-sm md:text-base"
             style={{ background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)' }}
           >
             Submit

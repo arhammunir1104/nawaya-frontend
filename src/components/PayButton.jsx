@@ -35,7 +35,7 @@ function PayButton({text}) {
   return (
     <>
         <button 
-            className="px-10 py-3 rounded-full text-white cursor-pointer text-md shadow-xl transition-all hover:scale-105 active:scale-95"
+            className="px-10 py-3 rounded-full text-white cursor-pointer text-md  transition-all hover:scale-105 "
             style={{
               background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)'
             }}

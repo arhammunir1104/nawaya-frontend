@@ -53,7 +53,7 @@ const Card = () => {
               {/* Centered Icon Container */}
               <div className="w-20 h-20 rounded-[100%] bg-[#2088371A] shadow-sm flex items-center justify-center text-3xl mb-10  transition-transform duration-300">
                 {/* group-hover:scale-110 */}
-                <img src={item.icon}  alt="" />
+                <img src={item.icon} className='w-10'  alt="" />
               </div>
 
               {/* Centered Text Content */}

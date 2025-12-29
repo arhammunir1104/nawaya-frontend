@@ -9,7 +9,7 @@ import WatchAVideoGuide from '../../components/WatchAVideoGuide';
 const HeroGuide = () => {
   return (
    <section className="bg-GrayBg pt-20 overflow-hidden">
-      {/* Heading and Paragraph  */}
+      {/* Heading and Paragraph  */} 
       <div className="mx-auto  xs:px-0 sm:px-6 text-center flex flex-col items-center-safe z-10 
                   xs:w-[90vw]
                   xl:w-[90vw] 2xl:w-[1400px]">

@@ -46,11 +46,11 @@ const WatchAVideoGuide = () => {
 
 
           {/* Action Buttons */}
-          <div className="mt-5 md:mt-7 flex flex-row justify-end gap-3">
+          <div className="mt-5 md:mt-7 flex flex-row justify-end items-center gap-3">
             <div>
              <button 
               onClick={() => setIsOpen(false)}
-              className="px-6 cursor-pointer md:px-8 py-[11px]  rounded-full border border-[#94BD1C] text-[#94BD1C] font-bold font-Urbanist md:text-sm hover:bg-[#F4F6F2] transition-colors order-2 sm:order-1"
+              className="px-6 cursor-pointer md:px-8 py-[10px] rounded-full border border-[#94BD1C] text-[#94BD1C] font-bold font-Urbanist text-[11px] xs:text-Paragraph6 2xl:text-Paragraph4 hover:bg-[#F4F6F2] transition-colors transition-all duration-300 active:scale-95"
               > 
               Close
             </button>
@@ -94,7 +94,7 @@ const WatchAVideoGuide = () => {
           /* Active: Slightly dimmed white */
           group-active:text-[#F4F6F2] group-active:bg-none
         ">
-          Watch a Video
+          Nawaya Explain
         </span>
       </button>
 

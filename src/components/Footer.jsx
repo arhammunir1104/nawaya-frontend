@@ -103,7 +103,7 @@ const Footer = () => {
         {/* BOTTOM COPYRIGHT SECTION */}
         <div className="pt-8 mt-8 border-t border-gray-800 text-center">
           <p className="text-sm font-Urbanist" style={{ color: TEXT_GRAY }}>
-            © 2025 Nawaya. All rights reserved.
+            © 2026 Nawaya. All rights reserved.
           </p>
         </div>
         

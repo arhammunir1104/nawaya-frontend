@@ -36,6 +36,7 @@ const UserDashboard = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0,0);
     if (!token) {
       navigate("/");
     } else {
@@ -135,7 +136,7 @@ const UserDashboard = () => {
               </p>
               
               <a 
-                href="https://calendly.com" 
+                href="https://calendly.com/mahmoudhajji/new-meeting" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full py-4 rounded-2xl text-white font-bold text-lg transition-transform hover:scale-[1.02] active:scale-95 shadow-lg shadow-[#94BD1C]/20"

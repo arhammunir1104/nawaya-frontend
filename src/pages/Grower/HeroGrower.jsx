@@ -9,8 +9,8 @@ import WatchAVideoGuide from "../../components/WatchAVideoGuide"
 const HeroGrower = () => {
   return (
     <section className="bg-GrayBg pt-20 overflow-hidden">
-      {/* Heading and Paragraph  */}
-      <div className=" mx-auto px-6 text-center flex flex-col items-center-safe z-8
+      {/* Heading and Paragraph  */} 
+      <div className=" mx-auto  xs:px-0 sm:px-6 text-center flex flex-col items-center-safe z-8
                   xs:w-[90vw]
                   xl:w-[90vw] 2xl:w-[1400px]">
         <h1 className="font-Urbanist font-semibold leading-tight tracking-tight capitalize text-textPrimary
@@ -27,7 +27,7 @@ const HeroGrower = () => {
         </p>
 
         {/* Button Join the waitlist */}
-        <div className="w-fit mt-6 flex flex-row gap-2  relative z-8 ">
+        <div className="w-fit mt-6 flex flex-row gap-2    sm:mb-0 relative z-8 ">
           <div>
           <JoinWaitlist_Btn />
           </div>

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import frame1 from "../../assets/Exclusive/frame.png"
 import frame2 from "../../assets/Exclusive/frame2.png"
-import PayButton from '../../components/PayButton';
 import JoinWaitlist_Btn from '../../components/JoinWaitlist_Btn';
 import { IoMdMail } from "react-icons/io";
 import { AppContext } from '../../context/AppContext';
@@ -50,7 +49,7 @@ const ExclusiveAccessCard = ({headline  , subheadline }) => {
                           </div>
                           <div className='sm:w-[60%] w-[100%] flex justify-center items-center'>
                               <JoinWaitlist_Btn  /> 
-                          </div>
+                          </div> 
                         </div>
         
         </div>
@@ -69,7 +68,7 @@ const ExclusiveAccessCard = ({headline  , subheadline }) => {
            <img 
             src={frame2} // Replace with your actual image path
             alt="3D Abstract Knot" 
-            className="md:w-full md:hidden  mt-[-40%]  flex md:h-full object-cover w-[100%]  text-right items-end justify-end drop-shadow-2xl"
+            className="md:w-full md:hidden  mt-[-30%]  flex md:h-full object-cover w-[100%]  text-right items-end justify-end drop-shadow-2xl"
           />
         </div>
       </div>

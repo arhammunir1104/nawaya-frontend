@@ -12,14 +12,17 @@ const Navbar = ({ role, setRole }) => {
   const [showOpt, setShowOpt] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
-  
+
   const desktopRef = useRef(null);
   const mobileRef = useRef(null);
 
   const location = useLocation();
   const navigate = useNavigate();
   const cookies = new Cookies();
-  const { token, setToken, setTempToken, setAdminToken } = useContext(AppContext);
+  const { token, setToken, setTempToken, setAdminToken, adminToken } = useContext(AppContext);
+
+  // Check if current page is an admin page
+  const isAdminPage = location.pathname.startsWith("/admin");
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -58,7 +61,7 @@ const Navbar = ({ role, setRole }) => {
   return (
     <nav className="bg-GrayBg w-full top-0 z-8 flex justify-center border-b border-gray-100/80 backdrop-blur-md">
       <section className="w-[95vw] 2xl:w-[1400px] flex items-center justify-between py-2.5 md:py-4">
-        
+
         {/* --- DESKTOP VIEW --- */}
         <div className="hidden lg:flex items-center gap-8">
           <NavLink to="/" className="hover:opacity-80 transition-opacity">
@@ -80,39 +83,48 @@ const Navbar = ({ role, setRole }) => {
           <div className="flex items-center gap-4 border-l pl-6 border-gray-200">
             {token ? (
               <div className="relative" ref={desktopRef}>
-                <button 
+                <button
                   onClick={(e) => { e.stopPropagation(); setProfileOpen(!profileOpen); }}
                   className={`flex items-center gap-2 bg-white p-1.5 pr-3 rounded-full border transition-all shadow-sm ${profileOpen ? 'border-[#94BD1C]' : 'border-gray-200 hover:border-[#94BD1C]'}`}
                 >
                   <div className="w-8 h-8 rounded-full flex items-center justify-center text-white" style={{ background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)' }}>
                     <FaUserAlt size={14} />
                   </div>
-                  <span className="font-Urbanist font-bold text-xs tracking-wider text-gray-700">ACCOUNT</span>
+                  <span className="font-Urbanist cursor-pointer font-bold text-xs tracking-wider text-gray-700">ACCOUNT</span>
                   <FaChevronDown className={`text-[10px] text-gray-400 transition-transform ${profileOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {profileOpen && (
                   <div className="absolute right-0 mt-3 w-52 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden py-2 z-[9999]">
-                    <button onClick={() => { navigate("/user"); setProfileOpen(false); }} className="w-full flex items-center gap-3 px-4 py-3 text-sm font-Urbanist font-bold text-gray-700 hover:bg-gray-50 hover:text-[#94BD1C] transition-colors">
+                    <button onClick={() => { navigate("/user"); setProfileOpen(false); }} className="w-full cursor-pointer flex items-center gap-3 px-4 py-3 text-sm font-Urbanist font-bold text-gray-700 hover:bg-gray-50 hover:text-[#94BD1C] transition-colors">
                       <FaThLarge className="text-xs" /> Dashboard
                     </button>
-                    <button onClick={handleLogout} className="w-full flex items-center gap-3 px-4 py-3 text-sm font-Urbanist font-bold text-red-500 hover:bg-red-50 transition-colors">
+                    <button onClick={handleLogout} className="w-full flex items-center gap-3 px-4 py-3 cursor-pointer text-sm font-Urbanist font-bold text-red-500 hover:bg-red-50 transition-colors">
                       <FaSignOutAlt className="text-xs" /> Logout
                     </button>
                   </div>
                 )}
               </div>
+            ) : adminToken ? (
+              <button
+                onClick={handleLogout}
+                className="px-8 py-2.5 rounded-full bg-red-50 text-red-600 border border-red-200 font-bold font-Urbanist shadow-sm hover:bg-red-500 hover:text-white transition-all flex items-center gap-2"
+              >
+                <FaSignOutAlt size={14} /> Logout
+              </button>
             ) : (
-              <NavLink to="/login">
-                <button className="px-8 py-2.5 rounded-full bg-gradient-to-r from-[#AABD05] to-[#0CBF95] text-white font-bold font-Urbanist shadow-lg hover:opacity-90 transition-opacity">Login</button>
-              </NavLink>
+              !isAdminPage && (
+                <NavLink to="/login">
+                  <button className="px-8 py-2.5 rounded-full bg-gradient-to-r from-[#AABD05] to-[#0CBF95] text-white font-bold font-Urbanist shadow-lg hover:opacity-90 transition-opacity">
+                    Login
+                  </button>
+                </NavLink>
+              )
             )}
           </div>
         </div>
 
         {/* --- COMPACT MOBILE VIEW --- */}
         <div className="lg:hidden w-full flex items-center justify-between">
-          
-          {/* Left: Menu & Logo (Smaller Icons) */}
           <div className="flex items-center gap-1.5 min-w-[80px]">
             <button onClick={() => setSidebarOpen(true)} className="bg-white w-8 h-8 rounded-full flex justify-center items-center shadow-sm border border-gray-100">
               <GrMenu className="text-sm" />
@@ -122,18 +134,16 @@ const Navbar = ({ role, setRole }) => {
             </NavLink>
           </div>
 
-          {/* Middle: Role Toggle (Heavily Optimized Size) */}
           <div className="flex-1 flex justify-center overflow-hidden">
             <div className="transform scale-[0.60] xs:scale-[0.70] origin-center transition-transform">
-               {showOpt && <RoleToggle role={role} setRole={setRole} />}
+              {showOpt && <RoleToggle role={role} setRole={setRole} />}
             </div>
           </div>
 
-          {/* Right: Profile or Login (Reduced Padding) */}
           <div className="flex justify-end min-w-[80px]">
             {token ? (
               <div className="relative" ref={mobileRef}>
-                <button 
+                <button
                   onClick={(e) => { e.stopPropagation(); setProfileOpen(!profileOpen); }}
                   className={`flex items-center gap-1 bg-white p-0.5 pr-1.5 rounded-full border shadow-sm ${profileOpen ? 'border-[#94BD1C]' : 'border-gray-200'}`}
                 >
@@ -154,19 +164,34 @@ const Navbar = ({ role, setRole }) => {
                   </div>
                 )}
               </div>
+            ) : adminToken ? (
+              <button
+                onClick={handleLogout}
+                className="text-red-500 font-bold font-Urbanist text-[11px] flex items-center gap-1 border border-red-100 px-3 py-1.5 rounded-full bg-red-50"
+              >
+                <FaSignOutAlt size={10} /> Logout
+              </button>
             ) : (
-              <NavLink to="/login">
-                <button className="bg-gradient-to-r from-[#94BD1C] to-[#29C28C] text-white font-bold font-Urbanist text-[10px] xs:text-[11px] px-3 py-1.5 rounded-full shadow-md whitespace-nowrap active:scale-95">
-                  Login
-                </button>
-              </NavLink>
+              !isAdminPage && (
+                <NavLink to="/login">
+                  <button className="bg-gradient-to-r from-[#94BD1C] to-[#29C28C] text-white font-bold font-Urbanist text-[10px] xs:text-[11px] px-3 py-1.5 rounded-full shadow-md whitespace-nowrap active:scale-95">
+                    Login
+                  </button>
+                </NavLink>
+              )
             )}
           </div>
         </div>
       </section>
 
       <div className="relative z-[200]">
-        <SideBar menus={menu} visible={sidebarOpen} onClose={() => setSidebarOpen(false)} isLoggedIn={!!token} onLogout={handleLogout} />
+        <SideBar
+          menus={menu}
+          visible={sidebarOpen}
+          onClose={() => setSidebarOpen(false)}
+          isLoggedIn={!!token || !!adminToken}
+          onLogout={handleLogout}
+        />
       </div>
     </nav>
   );

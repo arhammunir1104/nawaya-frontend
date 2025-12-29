@@ -106,7 +106,7 @@ const ThankYou = () => {
         {/* Footer Micro-Copy */}
         <div className="bg-[#F0F7E9]/40 p-5 text-center border-t border-[#94BD1C]/5">
           <p className="text-[11px] text-[#7A8C64] font-medium">
-            Didn’t receive an email? Check spam or <a href="mailto:support@nawaya.com" className="text-[#94BD1C] font-bold hover:underline">contact support</a>.
+            Didn’t receive an email? Check spam or <a href="mailto:support@nawaya.io" className="text-[#94BD1C] font-bold hover:underline">contact support</a>.
           </p>
         </div>
       </div>
