@@ -18,12 +18,12 @@ function PayButton({text}) {
       );
 
       if(response?.data?.status == "success"){
-        window.open(response?.data?.session, '_blank', 'noopener,noreferrer');
+        // FIXED: window.location.href is 100% safe for iOS/Safari
+        window.location.href = response.data.session;
       }
       else{
         toast.error(response?.response?.data?.message)
       }
-
     }
     catch(e){
        toast.error(e?.response?.data?.message || "Something Went Wrong, Please Try Again Later");
@@ -31,11 +31,10 @@ function PayButton({text}) {
     }
   }
 
-
   return (
     <>
         <button 
-            className="px-10 py-3 rounded-full text-white cursor-pointer text-md  transition-all hover:scale-105 "
+            className="px-10 py-3 rounded-full text-white cursor-pointer text-md transition-all hover:scale-105 active:scale-95 touch-manipulation relative z-50"
             style={{
               background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)'
             }}

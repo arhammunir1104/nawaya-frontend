@@ -10,7 +10,7 @@ const ExclusiveAccessCard = ({headline  , subheadline }) => {
   return (
     <div className=" pb-10  bg-gray-100 flex items-center justify-center ">
       {/* Main Container */}
-      <div className="relative md:mx-[0] mx-[5%] w-full h-auto md:h-[350px] max-w-5xl bg-white border-2 rounded-[40px] overflow-hidden shadow-sm flex flex-col md:flex-row ">
+      <div className="relative md:mx-[0] mx-[5%] w-full h-auto md:h-[350px] max-w-5xl bg-white rounded-[40px] overflow-hidden shadow-sm flex flex-col md:flex-row ">
         
         {/* Background Gradient Slash (The Green Right Side) */}
         <div 
@@ -61,14 +61,14 @@ const ExclusiveAccessCard = ({headline  , subheadline }) => {
           <img 
             src={frame1} // Replace with your actual image path
             alt="3D Abstract Knot" 
-            className="md:w-full md:flex hidden md:h-full object-cover h-[350px] w-[350px] text-right items-end justify-end drop-shadow-2xl"
+            className="md:w-full rounded-[40px] md:flex hidden md:h-full object-cover h-[350px] w-[350px] text-right items-end justify-end drop-shadow-2xl"
             />
        
 
            <img 
             src={frame2} // Replace with your actual image path
             alt="3D Abstract Knot" 
-            className="md:w-full md:hidden  mt-[-30%]  flex md:h-full object-cover w-[100%]  text-right items-end justify-end drop-shadow-2xl"
+            className="md:w-full md:hidden rounded-[40px]  mt-[-30%]  flex md:h-full object-cover w-[100%]  text-right items-end justify-end drop-shadow-2xl"
           />
         </div>
       </div>

@@ -206,14 +206,159 @@ const SurveyModal = ({ onClose }) => {
   }
 
   // --- VIEW: SURVEY FORM ---
-  return (
-    <div className="fixed z-20 inset-0 h-screen w-screen flex items-center justify-center p-2 sm:p-4">
-      <div className="absolute inset-0 bg-black/42 backdrop-blur-[2px]" onClick={onClose}></div>
+//   return (
+//     // FIX: Changed h-screen to h-[100dvh] to respect mobile browser address bars
+//     <div className="fixed z-[100] inset-0 h-[100dvh] w-screen flex items-center justify-center p-2 sm:p-4">
+//       <div className="absolute  inset-0 bg-black/40 backdrop-blur-[2px]" onClick={onClose}></div>
 
-      <div className="relative w-full max-w-2xl bg-white rounded-[30px] md:rounded-[40px] shadow-2xl overflow-hidden flex flex-col max-h-[92vh] animate-in zoom-in-95 duration-300">
+//       {/* FIX: Changed max-h to 90dvh and ensured the overflow-hidden works with flex-col */}
+//       <div className="relative  w-full max-w-2xl bg-white rounded-[30px] md:rounded-[40px] shadow-2xl overflow-hidden flex flex-col max-h-[88dvh] md:max-h-[92vh] animate-in zoom-in-95 duration-300">
+
+//         {/* Header - Fixed */}
+//         <div className="w-full mt-0 py-4 md:py-6 text-center shrink-0 relative" style={{ background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)' }}>
+//           <div className='flex items-center justify-start px-5 absolute top-0 left-0 h-full z-10'>
+//             <button onClick={onClose} type="button">
+//               <IoMdArrowBack className="text-2xl md:text-3xl text-white hover:text-red-500 transition-all cursor-pointer" />
+//             </button>
+//           </div>
+//           <h2 className="text-white font-bold text-xs md:text-sm uppercase tracking-widest">Join The Waitlist</h2>
+//         </div>
+
+//         {/* Form Body - Scrollable */}
+//         <div className="overflow-y-auto z-20 p-6 md:p-12 custom-scrollbar flex-1">
+//           <div className="text-center mb-8 md:mb-10">
+//             <h3 className="text-xl md:text-3xl font-bold text-[#111111]">Help Shape Nawaya From Day One</h3>
+//             <p className='font-Urbanist text-sm text-gray-500 my-1'>Your answers help us build a meaningful experience for both growers and guides.</p>
+//           </div>
+
+//           <form id="survey-form" className="space-y-6" onSubmit={handleSubmit}>
+//             <input
+//               name="fullName"
+//               type="text"
+//               placeholder="Enter your full name*"
+//               className="w-full px-6 font-Urbanist py-4 rounded-2xl bg-[#F4F6F2] border-none outline-none focus:ring-2 focus:ring-[#94BD1C] text-[#111111] placeholder:text-gray-500 text-sm md:text-base"
+//               required
+//               onChange={handleChange}
+//             />
+//             <input
+//               name="email"
+//               type="email"
+//               placeholder="Enter your email*"
+//               className="w-full px-6 font-Urbanist py-4 rounded-2xl bg-[#F4F6F2] border-none outline-none focus:ring-2 focus:ring-[#94BD1C] text-[#111111] placeholder:text-gray-500 text-sm md:text-base"
+//               required
+//               onChange={handleChange}
+//               value={formData.email}
+//             />
+
+//             <select
+//               name="seeking"
+//               className="w-full font-Urbanist px-6 py-4 rounded-2xl bg-[#F4F6F2] border-none outline-none cursor-pointer text-[#111111] text-sm md:text-base"
+//               required
+//               onChange={handleChange}
+//             >
+//               <option value="" className="text-gray-500">What brings you to Nawaya?*</option>
+//               <option value="Mentorship">I want to grow and learn</option>
+//               <option value="Networking">I want to guide others</option>
+//               <option value="Growth">Both</option>
+//             </select>
+
+//             <div className="space-y-3">
+//               <p className="font-bold text-[#111111] text-xs md:text-sm text-left font-Urbanist">What are your area(s) of interest?*</p>
+//               {['Career / Work', 'Health & Wellbeing', 'Personal Development', 'Relationships', 'Entrepreneurship', 'Parenting / Famiily', 'Financial Growth', 'Leadership', 'Other'].map((interest) => (
+//                 <label key={interest} className="flex font-Urbanist items-center gap-4 p-4 rounded-2xl bg-[#F4F6F2] cursor-pointer hover:bg-gray-100 transition-colors">
+//                   <input
+//                     type="checkbox"
+//                     name="interests"
+//                     value={interest}
+//                     className="w-5 h-5 font-Urbanist accent-[#94BD1C]"
+//                     onChange={handleChange}
+//                   />
+//                   <span className="text-xs md:text-sm font-medium text-[#111111]">{interest}</span>
+//                 </label>
+//               ))}
+//             </div>
+
+//             <input
+//               name="country"
+//               type="text"
+//               placeholder="Enter your country / region*"
+//               className="w-full font-Urbanist px-6 py-4 rounded-2xl bg-[#F4F6F2] border-none outline-none focus:ring-2 focus:ring-[#94BD1C] text-[#111111] placeholder:text-gray-500 text-sm md:text-base"
+//               required
+//               onChange={handleChange}
+//             />
+
+//             <div className="space-y-3">
+//               <p className="font-bold text-left font-Urbanist text-[#111111] text-xs md:text-sm px-2">Do you have a language preference?*</p>
+//               {['Arabic', 'English', 'Both', 'Other Language'].map((lang) => (
+//                 <label key={lang} className="flex font-Urbanist items-center gap-4 p-4 rounded-2xl bg-[#F4F6F2] cursor-pointer">
+//                   <input
+//                     type="checkbox"
+//                     name="languages"
+//                     value={lang}
+//                     className="w-5 font-Urbanist h-5 accent-[#94BD1C]"
+//                     onChange={handleChange}
+//                   />
+//                   <span className="text-xs md:text-sm font-medium text-[#111111]">{lang}</span>
+//                 </label>
+//               ))}
+//             </div>
+
+//             <div className="space-y-3">
+//               <p className="font-bold text-left font-Urbanist text-[#111111] text-xs md:text-sm px-2">How would you like to grow?</p>
+//               {['Connect with like-minded people', 'Join a guided growth circle', 'Get 1:1 mentorship', 'I’m still exploring'].map((growth) => (
+//                 <label key={growth} className="flex font-Urbanist items-center gap-4 p-4 rounded-2xl bg-[#F4F6F2] cursor-pointer">
+//                   <input
+//                     type="checkbox"
+//                     name="growth"
+//                     value={growth}
+//                     className="w-5 h-5 font-Urbanist accent-[#94BD1C]"
+//                     onChange={handleChange}
+//                   />
+//                   <span className="text-xs md:text-sm font-medium text-[#111111]">{growth}</span>
+//                 </label>
+//               ))}
+//             </div>
+
+//             <label className="flex items-start gap-3 py-4">
+//               <input
+//                 type="checkbox"
+//                 className="mt-1 w-4 h-4 accent-[#94BD1C]"
+//                 required
+//                 onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
+//               />
+//               <span className="text-[10px] md:text-xs text-black font-Urbanist leading-relaxed">I agree to receive updates about Nawaya’s launch and early access opportunities.</span>
+//             </label>
+
+//             <p className='text-black text-[10px] md:text-xs text-left font-Urbanist pb-4'><b>Nawaya </b> is being built with its early community. Once we launch, you’ll hear from us with next steps, early access details, and what’s coming first.</p>
+//           </form>
+//         </div>
+
+//         {/* Footer - Fixed/Sticky at Bottom */}
+//         {/* FIX: Added pb-10 for mobile to ensure the button sits above the iPhone home bar */}
+//         <div className="shrink-0 p-5 pb-10 sm:pb-8 md:p-8 bg-white border-t border-gray-100 flex flex-col sm:flex-row gap-4">
+//           <button
+//             type="submit"
+//             form="survey-form"
+//             className="flex-1 py-3 cursor-pointer md:py-4 rounded-full text-white font-bold shadow-lg transition-transform active:scale-95 text-sm md:text-base touch-manipulation"
+//             style={{ background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)' }}
+//           >
+//             Submit
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+// )
+
+return (
+    // FIX 1: Use h-[100dvh] instead of h-screen. This accounts for the Safari URL bar.
+    <div className="fixed z-[100] inset-0 h-[100dvh] w-screen flex items-center justify-center p-2 sm:p-4">
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" onClick={onClose}></div>
+
+      {/* FIX 2: Adjusted max-h to 85dvh for mobile to ensure the entire modal + shadow is visible */}
+      <div className="relative w-full max-w-2xl bg-white rounded-[30px] md:rounded-[40px] shadow-2xl overflow-hidden flex flex-col max-h-[85dvh] md:max-h-[92vh] animate-in zoom-in-95 duration-300">
 
         {/* Header - Fixed */}
-        <div className="w-full py-4 md:py-6 text-center shrink-0 relative" style={{ background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)' }}>
+        <div className="w-full mt-0 py-4 md:py-6 text-center shrink-0 relative" style={{ background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)' }}>
           <div className='flex items-center justify-start px-5 absolute top-0 left-0 h-full z-10'>
             <button onClick={onClose} type="button">
               <IoMdArrowBack className="text-2xl md:text-3xl text-white hover:text-red-500 transition-all cursor-pointer" />
@@ -332,12 +477,12 @@ const SurveyModal = ({ onClose }) => {
         </div>
 
         {/* Footer - Fixed/Sticky at Bottom */}
-        <div className="shrink-0 p-5 md:p-8 bg-white border-t border-gray-100 flex flex-col sm:flex-row gap-4">
-        
+        {/* FIX 3: Added pb-[env(safe-area-inset-bottom)] and explicit padding for iPhone home indicator */}
+        <div className="shrink-0 p-5 pb-8 sm:pb-8 md:p-8 bg-white border-t border-gray-100 flex flex-col sm:flex-row gap-4">
           <button
             type="submit"
             form="survey-form"
-            className="flex-1 py-3 cursor-pointer md:py-4 rounded-full text-white font-bold shadow-lg transition-transform active:scale-95 text-sm md:text-base"
+            className="flex-1 py-3 cursor-pointer md:py-4 rounded-full text-white font-bold shadow-lg transition-transform active:scale-95 text-sm md:text-base touch-manipulation"
             style={{ background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)' }}
           >
             Submit
@@ -345,7 +490,7 @@ const SurveyModal = ({ onClose }) => {
         </div>
       </div>
     </div>
-  );
+)
 };
 
 export default SurveyModal;

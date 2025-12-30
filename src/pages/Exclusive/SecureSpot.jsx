@@ -42,7 +42,7 @@ const SecureSpot = () => {
                 className="h-full flex items-center justify-center text-white font-bold text-sm"
                 style={{
                   width: '40%',
-                  background: 'linear-gradient(90deg, #94BD1C 0%, #29C28C 100%)'
+                background: 'linear-gradient(90deg, #F9D423 0%, #FF4E50 100%)'
                 }}
               >
                 40%

@@ -65,7 +65,13 @@ const Navbar = ({ role, setRole }) => {
         {/* --- DESKTOP VIEW --- */}
         <div className="hidden lg:flex items-center gap-8">
           <NavLink to="/" className="hover:opacity-80 transition-opacity">
-            <img src={Logo} alt="Nawaya Logo" className="w-14 h-14 rounded-full bg-white object-contain shadow-sm" />
+            {/* IMPROVED LOGO FOR APPLE DEVICES */}
+            <img 
+              src={Logo} 
+              alt="Nawaya Logo" 
+              className="w-14 h-auto rounded-full bg-white object-contain shadow-sm" 
+              style={{ imageRendering: '-webkit-optimize-contrast' }}
+            />
           </NavLink>
           <ul className="flex items-center gap-6">
             {menu.map((item) => (
@@ -130,7 +136,13 @@ const Navbar = ({ role, setRole }) => {
               <GrMenu className="text-sm" />
             </button>
             <NavLink to="/">
-              <img src={Logo} alt="Logo" className="w-8 h-8 bg-white rounded-full object-contain" />
+              {/* IMPROVED LOGO FOR APPLE DEVICES (MOBILE) */}
+              <img 
+                src={Logo} 
+                alt="Logo" 
+                className="w-8 h-auto bg-white rounded-full object-contain" 
+                style={{ imageRendering: '-webkit-optimize-contrast' }}
+              />
             </NavLink>
           </div>
 
