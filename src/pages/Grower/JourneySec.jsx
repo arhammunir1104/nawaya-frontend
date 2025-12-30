@@ -57,9 +57,9 @@ const JourneySec = () => {
           <div className="w-full  lg:w-1/3 order-1">
             <div className={`p-2  lg:pt-0 rounded-2xl lg:rounded-none flex w-[98%] ml-[1%] lg:ml-0 lg:w-full lg:bg-[#F0F1F2] bg-white lg:flex-col justify-around flex-row lg:space-y-5`}>
               {steps.map((step) => (
-                <div 
+                <div  
                   key={step.id} 
-                  className={`flex  cursor-pointer transition-all justify-around duration-300 w-full
+                  className={`flex  cursor-pointer transition-all justify-around md:justify-start duration-300 w-full
                     ${activeStep === step.id ? "lg:bg-white  lg:p-5 rounded-2xl shadow-sm" : "lg:bg-gray-50  lg:p-5 rounded-2xl hover:lg:bg-white/50"}
                   `}
                   onClick={() => handleStepClick(step.id)}

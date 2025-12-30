@@ -45,6 +45,7 @@ const Navbar = ({ role, setRole }) => {
     cookies.remove('user_token', { path: '/' });
     cookies.remove('temp_token', { path: '/' });
     cookies.remove('admin_token', { path: '/' });
+    cookies.remove('admin_token', { path: '/admin' });
     setToken(false);
     setTempToken(false);
     setAdminToken(false);
