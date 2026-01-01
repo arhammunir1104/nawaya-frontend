@@ -70,7 +70,7 @@ const Navbar = ({ role, setRole }) => {
             <img 
               src={Logo} 
               alt="Nawaya Logo" 
-              className="w-14 h-auto rounded-full bg-white object-contain shadow-sm" 
+              className="w-14 border-2 h-auto rounded-full bg-white object-contain shadow-sm" 
               style={{ imageRendering: '-webkit-optimize-contrast' }}
             />
           </NavLink>
@@ -133,18 +133,24 @@ const Navbar = ({ role, setRole }) => {
         {/* --- COMPACT MOBILE VIEW --- */}
         <div className="lg:hidden w-full flex items-center justify-between">
           <div className="flex items-center gap-1.5 min-w-[80px]">
-            <button onClick={() => setSidebarOpen(true)} className="bg-white w-8 h-8 rounded-full flex justify-center items-center shadow-sm border border-gray-100">
+            <button onClick={() => setSidebarOpen(true)} className="bg-white w-9 h-9 rounded-full flex justify-center items-center  border border-gray-100">
               <GrMenu className="text-sm" />
             </button>
-            <NavLink to="/">
-              {/* IMPROVED LOGO FOR APPLE DEVICES (MOBILE) */}
-              <img 
-                src={Logo} 
-                alt="Logo" 
-                className="w-8 h-auto bg-white rounded-full object-contain" 
-                style={{ imageRendering: '-webkit-optimize-contrast' }}
-              />
-            </NavLink>
+           <NavLink to="/">
+            {/* IMPROVED LOGO FOR MOBILE: Fixed blurring and edge issues */}
+          <div className="w-9 h-9 flex items-center justify-center bg-white rounded-full  overflow-hidden">
+            <img 
+              src={Logo} 
+              alt="Logo" 
+              className="w-full h-full p-[0.5] object-contain" 
+              style={{ 
+                imageRendering: 'auto',
+                WebkitFontSmoothing: 'antialiased',
+                transform: 'translateZ(0)' // Triggers GPU rendering for sharpness
+              }}
+            />
+          </div>
+        </NavLink>
           </div>
 
           <div className="flex-1 flex justify-center overflow-hidden">

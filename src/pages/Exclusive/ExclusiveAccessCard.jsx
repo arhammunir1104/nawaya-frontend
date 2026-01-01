@@ -4,7 +4,7 @@ import PayButton from '../../components/PayButton';
 import frame2 from "../../assets/Exclusive/frame2.png"
 
 const ExclusiveAccessCard = () => {
-  return (
+  return ( 
     <div className=" my-[10%] bg-gray-100 flex items-center justify-center ">
       {/* Main Container */}
       <div className="relative w-full max-w-5xl bg-white rounded-[40px] overflow-hidden shadow-sm flex flex-col md:flex-row ">
@@ -40,14 +40,14 @@ For a limited time, unlock a private founder message and join the circle of Nawa
                   <img 
                     src={frame1} // Replace with your actual image path
                     alt="3D Abstract Knot" 
-                    className="md:w-full md:flex hidden md:h-full object-cover h-[350px] w-[350px] text-right items-end justify-end drop-shadow-2xl"
+                    className="md:w-full rounded-[40px] md:flex hidden md:h-full object-cover h-[350px] w-[350px] text-right items-end justify-end drop-shadow-2xl"
                     />
                
         
                    <img 
                     src={frame2} // Replace with your actual image path
                     alt="3D Abstract Knot" 
-                    className="md:w-full md:hidden  mt-[-20%]  flex md:h-full object-cover w-[100%]  text-right items-end justify-end drop-shadow-2xl"
+                    className="md:w-full md:hidden rounded-[40px]  mt-[-20%]  flex md:h-full object-cover w-[100%]  text-right items-end justify-end drop-shadow-2xl"
                   />
                 </div>
       </div>

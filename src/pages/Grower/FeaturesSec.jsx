@@ -4,13 +4,13 @@ import { LuBookMarked } from "react-icons/lu";
 import { LuUsersRound } from "react-icons/lu";
 import Personalized from '../../assets/Grower/Personalized.png';
 import Grow from '../../assets/Grower/Grow.png';
-import Learn from '../../assets/Grower/Learn.png';
+import Learn from '../../assets/Grower/Learn2.png';
 import JoinWaitlist_Btn from "../../components/JoinWaitlist_Btn";
 
 const FeaturesSec = () => {
 
     const GrowFeaturesCards = [
-        {
+        { 
             id : 1,
             icon: <LuGraduationCap size={24} color="#3E9218" />,
             image: Personalized,
@@ -66,11 +66,11 @@ const FeaturesSec = () => {
                    p-6 sm:p-8 lg:p-6 xl:p-10 w-full h-full"
       >
         {/* Card Image Wrapper - Ensuring it fits the container */}
-        <div className="w-full mb-6 flex justify-center lg:justify-start">
+        <div className="w-full  mb-6 flex justify-center lg:justify-start">
           <img 
             src={card.image} 
             alt={card.title} 
-            className="w-full h-auto object-cover rounded-xl" 
+            className={`w-full h-auto object-cover rounded-xl`} 
           />
         </div>
 
