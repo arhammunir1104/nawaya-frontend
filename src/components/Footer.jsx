@@ -6,51 +6,61 @@ import instagram from "../assets/General/instagram.png";
 import linkedin from "../assets/General/linkedin.png";
 import twitter from "../assets/General/twitter.jpg";
 import tiktok from "../assets/General/tik-tok.jpg";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom'; // Added useLocation
 
 // --- DESIGN CONSTANTS ---
 const BG_DARK = '#131416';
 const TEXT_GRAY = '#9FA7B1';
 const TEXT_WHITE = '#FFFFFF';
-const PRIMARY_GREEN = '#00C29F'; // Nawaya Primary Green
+const PRIMARY_GREEN = '#00C29F';
 
 // --- Link Data Structure ---
 const linkColumns = [
   {
     title: "Links",
-    links: [{text: "How it works", link :"#how-it-works"}, {text: "Features", link :"#features"},{text: "FAQ", link :"#faq"}],
+    // Note: link key modified to only hold the ID
+    links: [
+      { text: "How it works", id: "how-it-works" },
+      { text: "Features", id: "features" },
+      { text: "FAQ", id: "faq" }
+    ],
   },   
   {
     title: "Legal",
-    links: [{text: "Privacy Policy", link :"/privacy-policy"}, {text: "Term of Use", link :"/terms-of-use"}, {text: "Cookie Policy", link :"/cookie-policy"}],
+    links: [
+      { text: "Privacy Policy", link: "/privacy-policy" },
+      { text: "Term of Use", link: "/terms-of-use" },
+      { text: "Cookie Policy", link: "/cookie-policy" }
+    ],
   },
   {
     title: "Social",
     email: "hello@nawaya.io",
     links: [
-      { Icon: tiktok,  name: 'Tik Tok', link: "https://www.tiktok.com/@nawaya.app?lang=en" },
-      { Icon: instagram,  name: 'Instagram', link: "https://www.instagram.com/nawaya.growth" },
-      { Icon: linkedin,  name: 'LinkedIn', link: "https://www.linkedin.com/company/nawaya-app" },
-      { Icon: twitter,  name: 'Twitter', link: "https://x.com/nawaya_growth" },
+      { Icon: tiktok, name: 'Tik Tok', link: "https://www.tiktok.com/@nawaya.app?lang=en" },
+      { Icon: instagram, name: 'Instagram', link: "https://www.instagram.com/nawaya.growth" },
+      { Icon: linkedin, name: 'LinkedIn', link: "https://www.linkedin.com/company/nawaya-app" },
+      { Icon: twitter, name: 'Twitter', link: "https://x.com/nawaya_growth" },
     ]
   },
 ];
 
 const Footer = () => {
+  const location = useLocation();
+  const isGuidePage = location.pathname === '/guide';
+
   return (
     <footer className="font-sans pt-16 pb-8" style={{ backgroundColor: BG_DARK, color: TEXT_WHITE }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Top Section: Brand/CTA and Links */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
           
-          {/* Column 1: Brand, Description, and Button */}
           <div className="col-span-2 lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-               <img src={footerIcon} alt="Nawaya Logo" />
-               <p className="text-md text-white font-Urbanist leading-relaxed">Where growth becomes a shared journey.</p>
+                <img src={footerIcon} alt="Nawaya Logo" />
+                <p className="text-md text-white font-Urbanist leading-relaxed">Where growth becomes a shared journey.</p>
             </div>
-            <p style={{color : TEXT_GRAY}} className="text-sm font-Urbanist leading-relaxed mb-6 max-w-sm">
+            <p style={{ color: TEXT_GRAY }} className="text-sm font-Urbanist leading-relaxed mb-6 max-w-sm">
             Nawaya brings people together to grow and guide through live sessions, programs, and circles - creating meaningful progress through shared knowledge, real connection, and intentional learning.
             </p>
 
@@ -66,21 +76,30 @@ const Footer = () => {
                 {column.title}
               </h4>
               <ul className="space-y-3">
-                {column.links.map((link, i) => (
-                  <li key={i}>
-                    <a
-                      href={link.link}
-                      className="text-sm text-white hover:text-[#00C29F] transition-colors"
-                    >
-                      {link.text}
-                    </a>
-                  </li>
-                ))}
+                {column.links.map((link, i) => {
+                  // DYNAMIC LINK LOGIC:
+                  // If it's the "Links" column (idx 0), apply the # vs /# logic
+                  const isScrollLink = idx === 0;
+                  const finalHref = isScrollLink 
+                    ? (isGuidePage ? `#${link.id}` : `/#${link.id}`) 
+                    : link.link;
+
+                  return (
+                    <li key={i}>
+                      <a
+                        href={finalHref}
+                        className="text-sm text-white hover:text-[#00C29F] transition-colors"
+                      >
+                        {link.text}
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
 
-          {/* Column 4: Last Link Section (Social) */}
+          {/* Social Section */}
           <div className="lg:col-span-1">
             <h4 className="text-sm font-semibold text-white mb-4 tracking-wider uppercase">
               {linkColumns[2].title}
